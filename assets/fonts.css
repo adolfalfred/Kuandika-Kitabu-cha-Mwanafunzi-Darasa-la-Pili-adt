@@ -87,7 +87,9 @@ body {
 
 #content {
   color: #1e293b;
-  font-size: 1.125rem;
+  /* Early-primary instructions must remain comfortably readable on phones
+     while growing toward the proportions used by the printed pupil book. */
+  font-size: clamp(1.25rem, 1.14rem + 0.35vw, 1.5rem);
   line-height: 1.65;
 }
 
@@ -705,7 +707,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
 .page-title {
   margin-bottom: 1.5rem;
   color: #a21caf;
-  font-size: clamp(1.75rem, 8vw, 2.25rem);
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
   overflow-wrap: anywhere;
 }
@@ -717,7 +719,11 @@ body:has(#nav-container [class~="bottom-18"]) main {
   background: #f8fafc;
   padding: 1.25rem 1.5rem;
   color: #1e293b;
+  font-size: clamp(1.3rem, 1.18rem + 0.38vw, 1.55rem);
+  line-height: 1.7;
   overflow-wrap: anywhere;
+  /* The localization bundle retains these source line breaks so numbered and
+     lettered prompts remain one item per line after the reader initializes. */
   white-space: pre-line;
 }
 
@@ -844,6 +850,8 @@ body:has(#nav-container [class~="bottom-18"]) main {
 .inclusive-instruction {
   margin-block: 0.75rem;
   color: #0f3f5b;
+  font-size: clamp(1.25rem, 1.14rem + 0.35vw, 1.5rem);
+  line-height: 1.6;
   font-weight: 700;
 }
 
