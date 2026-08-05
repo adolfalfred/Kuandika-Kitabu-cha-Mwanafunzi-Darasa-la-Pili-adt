@@ -105,18 +105,11 @@
     "level": 2
   },
   {
-    "section_id": "pg013_sec002",
-    "href": "pg013_sec002.html",
-    "title": "Kuandika habari fupi kwa mwandiko wa chapa wenye vikonyo",
-    "chapter_id": "toc_pg013_sec002",
+    "section_id": "pg013014_sec001",
+    "href": "pg013014_sec001.html",
+    "title": "Mechi ya mpira wa miguu",
+    "chapter_id": "toc_pg013014_sec001",
     "level": 2
-  },
-  {
-    "section_id": "pg014_sec001",
-    "href": "pg014_sec001.html",
-    "title": "Mechi ya mpira wa miguu (inaendelea)",
-    "chapter_id": "toc_pg014_sec001",
-    "level": 3
   },
   {
     "section_id": "pg015_sec001",
@@ -210,18 +203,11 @@
     "level": 2
   },
   {
-    "section_id": "pg026_sec001",
-    "href": "pg026_sec001.html",
+    "section_id": "pg026027_sec001",
+    "href": "pg026027_sec001.html",
     "title": "Simba na Panya",
-    "chapter_id": "toc_pg026_sec001",
+    "chapter_id": "toc_pg026027_sec001",
     "level": 2
-  },
-  {
-    "section_id": "pg027_sec001",
-    "href": "pg027_sec001.html",
-    "title": "Simba na Panya (inaendelea)",
-    "chapter_id": "toc_pg027_sec001",
-    "level": 3
   },
   {
     "section_id": "pg028_sec001",
@@ -322,18 +308,11 @@
     "level": 2
   },
   {
-    "section_id": "pg041_sec002",
-    "href": "pg041_sec002.html",
-    "title": "Kuandika hadithi fupi kwa kuzingatia alama za uandishi",
-    "chapter_id": "toc_pg041_sec002",
-    "level": 2
-  },
-  {
-    "section_id": "pg042_sec001",
-    "href": "pg042_sec001.html",
+    "section_id": "pg041042_sec001",
+    "href": "pg041042_sec001.html",
     "title": "Bibi Kalulu na Nyumbu na Swala",
-    "chapter_id": "toc_pg042_sec001",
-    "level": 3
+    "chapter_id": "toc_pg041042_sec001",
+    "level": 2
   },
   {
     "section_id": "pg043_sec001",
