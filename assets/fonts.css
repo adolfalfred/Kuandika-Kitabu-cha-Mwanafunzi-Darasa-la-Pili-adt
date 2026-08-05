@@ -135,12 +135,13 @@ body {
 #content input[type="text"] {
   --handwriting-row-height: 4rem;
   background-color: #fff;
-  background-image: url("../images/crops/handwriting-rule.png");
+  background-image: url("../images/crops/handwriting-rule.png?v=5");
   background-repeat: repeat-y;
   background-position: left 0.25rem;
-  /* The source fragment includes a short white tail at its right edge. A
-     slight horizontal overscan keeps each ruled line continuous. */
-  background-size: 112.5% var(--handwriting-row-height);
+  /* The full-width tile uses source-measured line positions and colours.
+     Never overscan a narrow page-edge fragment: its white tail makes the
+     guide disappear across the learner's answer area. */
+  background-size: 100% var(--handwriting-row-height);
 }
 
 .handwriting-guide {
@@ -720,7 +721,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-callout {
-  width: min(100%, 18rem);
+  width: min(100%, 42rem);
   justify-self: center;
   border: 0;
   background: transparent;
@@ -728,7 +729,9 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-callout img {
-  max-height: 18rem;
+  width: 100%;
+  max-height: none;
+  object-fit: contain;
 }
 
 .source-image-grid:has(> .source-callout) > .source-callout:last-child:nth-child(odd) {
