@@ -1,0 +1,60 @@
+{
+  "title": "Writing Pupil's Book Standard 2",
+  "bundleVersion": "4",
+  "languages": {
+    "available": [
+      "en-GB"
+    ],
+    "default": "en-GB"
+  },
+  "features": {
+    "signLanguage": false,
+    "easyRead": true,
+    "glossary": true,
+    "eli5": false,
+    "readAloud": true,
+    "autoplay": true,
+    "showTutorial": true,
+    "showNavigationControls": true,
+    "describeImages": true,
+    "notepad": false,
+    "state": true,
+    "characterDisplay": false,
+    "highlight": false,
+    "activities": true
+  },
+  "braille": {
+    "enabled": true,
+    "implementationPhase": "native-baseline-and-educator-review-manifest",
+    "nativeTextInput": true,
+    "drawingResponses": true,
+    "primaryResponseMethod": "on-screen-handwriting",
+    "sixKeyInput": false,
+    "translationTable": null,
+    "translationStatus": "awaiting-qualified-tanzanian-braille-educator-review",
+    "activityManifest": "content/accessibility/braille-activity-manifest.json",
+    "sixKeyPilotStatus": "awaiting-specialist-approval"
+  },
+  "analytics": {
+    "enabled": false,
+    "siteId": 0,
+    "trackerUrl": "https://unisitetracker.unicef.io/matomo.php",
+    "srcUrl": "https://unisitetracker.unicef.io/matomo.js"
+  },
+  "defaultSettings": {
+    "dockLayout": {
+      "width": "full",
+      "position": "bottom",
+      "align": "spread"
+    },
+    "theme": "dark",
+    "iconSize": "md",
+    "reduceMotion": false
+  },
+  "lockedSettings": [
+    "dockLayout",
+    "theme",
+    "iconSize",
+    "reduceMotion"
+  ]
+}

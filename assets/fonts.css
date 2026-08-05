@@ -1,0 +1,669 @@
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("./fonts/AtkinsonHyperlegible-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("./fonts/AtkinsonHyperlegible-700-latin.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Sassoon Primary is extracted from the source book supplied for this conversion. */
+@font-face {
+  font-family: "Sassoon Primary";
+  src:
+    local("Sassoon Primary"),
+    local("SassoonPrimary"),
+    url("./fonts/SassoonPrimary.woff2") format("woff2"),
+    url("./fonts/SassoonPrimary.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Exact modelling face used by the source book on its four-line examples. */
+@font-face {
+  font-family: "Maandishi";
+  src: url("./fonts/Maandishi.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Reader chrome defaults to the highly legible navigation face. */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* The whole book, including headings and answer fields, uses Sassoon Primary. */
+#content,
+#content * {
+  font-family: "Sassoon Primary", "SassoonPrimary", sans-serif;
+}
+
+#content.container {
+  width: 100%;
+  max-width: 80rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#content {
+  color: #1e293b;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+#content h1,
+#content h2,
+#content h3 {
+  line-height: 1.2;
+}
+
+/* Tailwind's generated bundle omits this source-book heading colour. */
+#content .text-rose-600 {
+  color: #ed1c24;
+}
+
+#content img {
+  max-width: 100%;
+  height: auto;
+}
+
+#content input,
+#content textarea,
+#content select {
+  font: inherit;
+}
+
+#content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#content th,
+#content td {
+  vertical-align: top;
+}
+
+/* Keep source and website credits easy to read and tap, including long URLs. */
+#content .external-reference {
+  padding: 1.25rem;
+  border: 1px solid #bae6fd;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  overflow-wrap: anywhere;
+}
+
+#content .external-reference a {
+  font-weight: 700;
+  text-underline-offset: 0.16em;
+}
+
+/* Never allow the book face to leak into global reader controls. */
+#nav-container,
+#nav-container *,
+#interface-container,
+#interface-container * {
+  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+}
+
+.handwriting-sample {
+  letter-spacing: 0.035em;
+}
+
+/* Source-faithful four-line primary handwriting guides. The image is the
+   exact black/red ruling extracted from the supplied book PDF. */
+.handwriting-guide,
+#content textarea,
+#content input[type="text"] {
+  --handwriting-row-height: 4rem;
+  background-color: #fff;
+  background-image: url("../images/pg026_im004.png");
+  background-repeat: repeat-y;
+  background-position: left 0.25rem;
+  /* The source fragment includes a short white tail at its right edge. A
+     slight horizontal overscan keeps each ruled line continuous. */
+  background-size: 112.5% var(--handwriting-row-height);
+}
+
+.handwriting-guide {
+  min-height: calc(var(--handwriting-row-height) * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 1rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  line-height: var(--handwriting-row-height);
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  letter-spacing: 0.035em;
+}
+
+#content .handwriting-guide {
+  font-family: "Maandishi", "Sassoon Primary", "SassoonPrimary", sans-serif;
+}
+
+#content ol.handwriting-guide {
+  list-style-position: inside;
+}
+
+#content .handwriting-guide > li {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: var(--handwriting-row-height);
+}
+
+#content textarea {
+  /* Size Sassoon Primary against the four-line ruling: lowercase bodies sit
+     between the red lines, capitals and ascenders rise above them, and
+     descenders fall below the baseline. */
+  font-size: 1.75rem;
+  line-height: var(--handwriting-row-height);
+  padding: 0 1rem;
+  background-position-y: 0.4rem;
+  background-attachment: local;
+}
+
+/* Writing activities declare how many complete primary-handwriting rows they
+   need. The extra quarter-rem accounts for the two-pixel borders so the last
+   four-line guide is never clipped. */
+#content textarea[data-writing-rows] {
+  min-height: calc(
+    var(--handwriting-row-height) * var(--writing-row-count) + 0.25rem
+  );
+}
+
+#content textarea[data-writing-rows="2"] { --writing-row-count: 2; }
+#content textarea[data-writing-rows="3"] { --writing-row-count: 3; }
+#content textarea[data-writing-rows="4"] { --writing-row-count: 4; }
+#content textarea[data-writing-rows="5"] { --writing-row-count: 5; }
+#content textarea[data-writing-rows="6"] { --writing-row-count: 6; }
+#content textarea[data-writing-rows="7"] { --writing-row-count: 7; }
+#content textarea[data-writing-rows="8"] { --writing-row-count: 8; }
+#content textarea[data-writing-rows="10"] { --writing-row-count: 10; }
+#content textarea[data-writing-rows="12"] { --writing-row-count: 12; }
+#content textarea[data-writing-rows="14"] { --writing-row-count: 14; }
+#content textarea[data-writing-rows="16"] { --writing-row-count: 16; }
+#content textarea[data-writing-rows="18"] { --writing-row-count: 18; }
+
+#content input[type="text"] {
+  min-height: var(--handwriting-row-height);
+  padding: 0 1rem;
+  font-size: 1.75rem;
+  line-height: var(--handwriting-row-height);
+  background-position-y: 0.4rem;
+}
+
+.unit-banner {
+  background: linear-gradient(90deg, #0284c7, #06b6d4);
+  color: white;
+}
+
+.activity-band {
+  background: #f97316;
+  color: white;
+}
+
+.unit-topic-chip {
+  display: inline-block;
+  background: white;
+  color: #e11d48;
+}
+
+.handwriting-lines {
+  line-height: var(--handwriting-row-height, 4rem);
+}
+
+.source-unit-hero {
+  width: min(100%, 52rem);
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.source-unit-title {
+  width: 100%;
+  padding: 0.65rem 1.5rem 0.8rem;
+  border-radius: 0.85rem;
+  background: linear-gradient(#13a8df, #0284c7);
+  box-shadow: inset 0 -3px 0 rgb(3 105 161 / 0.35);
+  color: #fff;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.source-unit-subtitle {
+  margin-top: 1rem;
+  color: #27272a;
+  font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.source-rabbit-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 18rem) minmax(9rem, 17rem);
+  align-items: center;
+  width: min(100%, 35rem);
+  margin: 0.75rem auto 0;
+}
+
+.source-speech-bubble {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 14rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1.75rem;
+  border: 4px solid #4f65a1;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 0 rgb(148 163 184 / 0.45);
+  color: #27272a;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.55;
+  text-align: center;
+}
+
+ul.source-speech-bubble {
+  list-style: none;
+}
+
+.source-speech-bubble::before,
+.source-speech-bubble::after {
+  position: absolute;
+  top: 2.65rem;
+  width: 0;
+  height: 0;
+  border-top: 1.7rem solid transparent;
+  border-bottom: 1.7rem solid transparent;
+  content: "";
+  transform: rotate(-7deg);
+}
+
+.source-speech-bubble::before {
+  z-index: 2;
+  right: -3.15rem;
+  border-left: 3.75rem solid #4f65a1;
+}
+
+.source-speech-bubble::after {
+  z-index: 3;
+  top: 2.83rem;
+  right: -2.72rem;
+  border-top-width: 1.45rem;
+  border-bottom-width: 1.45rem;
+  border-left: 3.45rem solid #fff;
+}
+
+.source-rabbit {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 17rem);
+  margin-left: -1.75rem;
+}
+
+@media (max-width: 600px) {
+  .source-rabbit-callout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(7rem, 0.75fr);
+  }
+
+  .source-speech-bubble {
+    min-height: 10.5rem;
+    padding: 1rem;
+    border-width: 3px;
+    font-size: 1.15rem;
+  }
+
+  .source-speech-bubble::before,
+  .source-speech-bubble::after {
+    top: 2rem;
+    border-top-width: 1.2rem;
+    border-bottom-width: 1.2rem;
+  }
+
+  .source-speech-bubble::before {
+    right: -2.25rem;
+    border-left-width: 2.75rem;
+  }
+
+  .source-speech-bubble::after {
+    top: 2.15rem;
+    right: -1.93rem;
+    border-top-width: 1rem;
+    border-bottom-width: 1rem;
+    border-left-width: 2.5rem;
+  }
+
+  .source-rabbit {
+    margin-left: -1.5rem;
+  }
+}
+
+.picture-answer-card {
+  display: flex;
+  min-height: 22rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #bae6fd;
+  border-radius: 1.25rem;
+  background: #f8fafc;
+  padding: 1rem;
+}
+
+.picture-answer-card img {
+  width: 100%;
+  max-width: 17rem;
+  max-height: 14rem;
+  object-fit: contain;
+}
+
+.picture-answer-card input {
+  width: 100%;
+  border: 2px solid #bae6fd;
+  border-radius: 0.75rem;
+  background-color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+}
+
+#content .picture-answer-card input[type="text"] {
+  padding: 0 1rem;
+}
+
+.contact-number-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.025em;
+}
+
+.contact-number-list a {
+  width: fit-content;
+  color: #0369a1;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  white-space: nowrap;
+}
+
+.book-toc-prelim {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+}
+
+.book-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+}
+
+.book-toc-card {
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.1);
+}
+
+.book-toc-card-one {
+  border-color: #bae6fd;
+}
+
+.book-toc-card-two {
+  border-color: #fed7aa;
+}
+
+.book-toc-card-three {
+  border-color: #a7f3d0;
+}
+
+.book-toc-unit-link {
+  display: block;
+  padding: 0.9rem 1.1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.book-toc-card-one .book-toc-unit-link {
+  background: #0369a1;
+}
+
+.book-toc-card-two .book-toc-unit-link {
+  background: #f97316;
+}
+
+.book-toc-card-three .book-toc-unit-link {
+  background: #059669;
+}
+
+.book-toc-card-body {
+  padding: 1rem;
+}
+
+.book-toc-section-link,
+.book-toc-link {
+  display: grid;
+  min-height: 2.75rem;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 0.75rem;
+  align-items: start;
+  border-radius: 0.6rem;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.book-toc-section-link {
+  margin-bottom: 0.75rem;
+  padding: 0.55rem 0.6rem;
+  color: #be123c;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.book-toc-link {
+  padding: 0.42rem 0.55rem;
+}
+
+.book-toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.book-toc-link:hover,
+.book-toc-section-link:hover,
+.book-toc-link:focus-visible,
+.book-toc-section-link:focus-visible {
+  background: #f1f5f9;
+  outline: 2px solid transparent;
+}
+
+.book-toc-unit-link:hover,
+.book-toc-unit-link:focus-visible {
+  filter: brightness(1.08);
+  outline: 3px solid #facc15;
+  outline-offset: -3px;
+}
+
+@media (max-width: 1100px) {
+  .book-toc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .book-toc-prelim,
+  .book-toc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.passage-layout {
+  display: grid;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.passage-source-image {
+  display: block;
+  width: 100%;
+  max-height: 42rem;
+  object-fit: contain;
+}
+
+.passage-layout textarea {
+  min-height: 30rem;
+}
+
+@media (min-width: 1024px) {
+  .passage-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* The shared reader dock is wider than a small phone in its desktop layout.
+   Reflow it into two touch-friendly rows and reserve enough scroll space for
+   both the dock and the floating activity action. */
+body:has(#nav-container [class~="bottom-18"]) main {
+  padding-bottom: 7rem;
+}
+
+@media (max-width: 699px) {
+  main {
+    padding-bottom: 7rem;
+  }
+
+  body:has(#nav-container [class~="bottom-18"]) main {
+    padding-bottom: 11rem;
+  }
+
+  #nav-container [role="group"][aria-label="Reader controls"] {
+    display: grid !important;
+    grid-template-areas:
+      "menu pager"
+      "tools tools";
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 0.5rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+
+  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(1) {
+    grid-area: pager;
+    min-width: 0;
+  }
+
+  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(2) {
+    grid-area: menu;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(2) > button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+
+  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(3) {
+    grid-area: tools;
+    width: 100%;
+    min-width: 0 !important;
+    justify-content: space-around !important;
+    gap: 0.25rem !important;
+    padding-left: 0 !important;
+  }
+
+  #nav-container [class~="bottom-18"] {
+    bottom: 7.25rem !important;
+  }
+
+  #interface-container [role="dialog"]:has([aria-label="Read aloud controls"]) {
+    width: calc(100vw - 2rem) !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  #interface-container [aria-label="Read aloud controls"] {
+    display: grid !important;
+    width: 100% !important;
+    max-width: none !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.25rem !important;
+  }
+
+  #interface-container [aria-label="Read aloud controls"] > button:nth-child(-n+4) {
+    justify-self: center;
+  }
+
+  #interface-container [aria-label="Read aloud controls"] > button:nth-child(5) {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 2.75rem !important;
+    grid-column: 1 / 4;
+  }
+
+  #interface-container [aria-label="Read aloud controls"] > button:nth-child(6) {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    grid-column: 4;
+    justify-self: center;
+  }
+
+  #interface-container [role="menuitemradio"] {
+    min-height: 2.75rem;
+  }
+
+  #interface-container button[aria-label="Mute"] {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  #interface-container [role="group"][aria-label="Volume"],
+  #interface-container [data-base-ui-slider-control] {
+    min-height: 2.75rem;
+  }
+
+  #interface-container [data-slot="slider-thumb"] {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  #interface-container [data-slot="slider-thumb"]::after {
+    inset: -0.875rem;
+  }
+}

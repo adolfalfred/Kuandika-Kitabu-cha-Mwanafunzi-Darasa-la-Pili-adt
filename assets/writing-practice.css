@@ -1,0 +1,173 @@
+/* On-screen handwriting is the primary response method for every open-ended
+   activity. The ruled background is the exact four-line guide already used by
+   this book, while the keyboard/Braille field remains an optional accessible
+   alternative. */
+.writing-practice {
+  width: 100%;
+  min-width: 0;
+  margin-top: 0.75rem;
+}
+
+.handwriting-canvas-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: var(--writing-canvas-height, 16rem);
+  overflow: hidden;
+  border: 2px solid #38bdf8;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  background-image: url("../images/pg026_im004.png");
+  background-repeat: repeat-y;
+  background-position: left 0.4rem;
+  background-size: 112.5% 4rem;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.65);
+}
+
+.drawing-canvas.handwriting-canvas {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  border-radius: 0.65rem;
+  background: transparent;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.drawing-canvas.handwriting-canvas:focus-visible {
+  outline: 4px solid #1d4ed8;
+  outline-offset: -4px;
+}
+
+.drawing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.drawing-clear {
+  min-height: 2.75rem;
+  border: 2px solid #0369a1;
+  border-radius: 0.7rem;
+  background: #e0f2fe;
+  padding: 0.5rem 0.9rem;
+  color: #075985;
+  font-weight: 700;
+}
+
+.drawing-clear:hover {
+  background: #bae6fd;
+}
+
+.drawing-clear:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 3px;
+}
+
+.drawing-status-row {
+  display: flex;
+  min-width: min(100%, 18rem);
+  flex: 1 1 18rem;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.drawing-status-row label {
+  flex: 0 0 auto;
+  color: #334155;
+  font-weight: 700;
+}
+
+#content input.drawing-response[type="text"] {
+  min-width: 0;
+  min-height: 2.75rem;
+  height: 2.75rem;
+  flex: 1 1 auto;
+  border: 2px solid #f59e0b;
+  border-radius: 0.7rem;
+  background: #fffbeb;
+  padding: 0.45rem 0.7rem;
+  color: #92400e;
+  font-family: "Sassoon Primary", "SassoonPrimary", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+#content input.drawing-response.is-complete[type="text"] {
+  border-color: #059669;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.integrated-text-response {
+  margin-top: 0.8rem;
+  border-top: 1px solid #cbd5e1;
+  padding-top: 0.75rem;
+  color: #334155;
+}
+
+.integrated-text-response label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #183f5b;
+  font-weight: 700;
+}
+
+#content .drawing-alternative-input {
+  width: 100%;
+  min-height: 3rem;
+  border: 2px solid #7dd3fc;
+  border-radius: 0.65rem;
+  background: #fff;
+  padding: 0.55rem 0.7rem;
+  font-family: "Sassoon Primary", "SassoonPrimary", sans-serif;
+  font-size: 1.2rem;
+  appearance: textfield;
+}
+
+.drawing-alternative-input:focus-visible {
+  outline: 3px solid #1d4ed8;
+  outline-offset: 3px;
+}
+
+.writing-practice-status {
+  margin-top: 0.5rem;
+  color: #065f46;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .drawing-actions,
+  .drawing-status-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .drawing-status-row {
+    min-width: 100%;
+    flex-basis: auto;
+  }
+
+  .drawing-clear,
+  #content input.drawing-response[type="text"] {
+    width: 100%;
+  }
+}
+
+@media print {
+  .drawing-clear,
+  .drawing-status-row,
+  .integrated-text-response,
+  .writing-practice-status {
+    display: none;
+  }
+}
