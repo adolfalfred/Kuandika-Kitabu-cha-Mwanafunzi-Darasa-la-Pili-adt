@@ -53,6 +53,9 @@
     if (label.indexOf("neno") !== -1 || label.indexOf("jina") !== -1) {
       return "Ingiza neno kwa kibodi au kutumia Breli.";
     }
+    if (label.indexOf("herufi") !== -1) {
+      return "Ingiza herufi kwa kibodi au kutumia Breli.";
+    }
     if (
       label.indexOf("habari") !== -1 ||
       label.indexOf("aya") !== -1 ||
@@ -358,10 +361,15 @@
     var alternativeLabel = element(
       "label",
       "",
-      alternativeLabelText(ariaLabel)
+      control.getAttribute("data-keyboard-braille-label") ||
+        alternativeLabelText(ariaLabel)
     );
     alternativeLabel.id = alternativeLabelId;
     alternativeLabel.htmlFor = alternativeId;
+    var alternativeNarrationId = control.getAttribute("data-id");
+    if (alternativeNarrationId) {
+      alternativeLabel.setAttribute("data-id", alternativeNarrationId);
+    }
     alternativeWrap.setAttribute("role", "group");
     alternativeWrap.setAttribute("aria-labelledby", alternativeLabelId);
     alternativeWrap.appendChild(alternativeLabel);
