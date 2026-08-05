@@ -606,7 +606,8 @@ body:has(#nav-container [class~="bottom-18"]) main {
     padding-bottom: 11rem;
   }
 
-  #nav-container [role="group"][aria-label="Reader controls"] {
+  /* Select the fixed reader dock by structure, not its localized aria-label. */
+  #nav-container [role="group"][class~="bottom-0"] {
     display: grid !important;
     grid-template-areas:
       "menu pager"
@@ -616,18 +617,18 @@ body:has(#nav-container [class~="bottom-18"]) main {
     padding: 0.25rem 0.5rem !important;
   }
 
-  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(1) {
+  #nav-container [role="group"][class~="bottom-0"] > div:nth-child(1) {
     grid-area: pager;
     min-width: 0;
   }
 
-  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(2) {
+  #nav-container [role="group"][class~="bottom-0"] > div:nth-child(2) {
     grid-area: menu;
     min-width: 0;
     overflow: hidden;
   }
 
-  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(2) > button {
+  #nav-container [role="group"][class~="bottom-0"] > div:nth-child(2) > button {
     width: 100% !important;
     min-width: 0 !important;
     max-width: none !important;
@@ -635,7 +636,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
     padding-left: 0.5rem !important;
   }
 
-  #nav-container [role="group"][aria-label="Reader controls"] > div:nth-child(3) {
+  #nav-container [role="group"][class~="bottom-0"] > div:nth-child(3) {
     grid-area: tools;
     width: 100%;
     min-width: 0 !important;
@@ -648,12 +649,12 @@ body:has(#nav-container [class~="bottom-18"]) main {
     bottom: 7.25rem !important;
   }
 
-  #interface-container [role="dialog"]:has([aria-label="Read aloud controls"]) {
+  #interface-container [role="dialog"]:has(> [role="group"] > button:nth-child(6):last-child) {
     width: calc(100vw - 2rem) !important;
     max-width: calc(100vw - 2rem) !important;
   }
 
-  #interface-container [aria-label="Read aloud controls"] {
+  #interface-container [role="dialog"] > [role="group"]:has(> button:nth-child(6):last-child) {
     display: grid !important;
     width: 100% !important;
     max-width: none !important;
@@ -661,18 +662,18 @@ body:has(#nav-container [class~="bottom-18"]) main {
     gap: 0.25rem !important;
   }
 
-  #interface-container [aria-label="Read aloud controls"] > button:nth-child(-n+4) {
+  #interface-container [role="dialog"] > [role="group"]:has(> button:nth-child(6):last-child) > button:nth-child(-n+4) {
     justify-self: center;
   }
 
-  #interface-container [aria-label="Read aloud controls"] > button:nth-child(5) {
+  #interface-container [role="dialog"] > [role="group"]:has(> button:nth-child(6):last-child) > button:nth-child(5) {
     width: 100% !important;
     min-width: 0 !important;
     height: 2.75rem !important;
     grid-column: 1 / 4;
   }
 
-  #interface-container [aria-label="Read aloud controls"] > button:nth-child(6) {
+  #interface-container [role="dialog"] > [role="group"]:has(> button:nth-child(6):last-child) > button:nth-child(6) {
     width: 2.75rem !important;
     height: 2.75rem !important;
     grid-column: 4;
