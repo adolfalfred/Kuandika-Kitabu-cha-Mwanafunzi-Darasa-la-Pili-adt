@@ -135,7 +135,7 @@ body {
 #content input[type="text"] {
   --handwriting-row-height: 4rem;
   background-color: #fff;
-  background-image: url("../images/pg026_im004.png");
+  background-image: url("../images/crops/handwriting-rule.png");
   background-repeat: repeat-y;
   background-position: left 0.25rem;
   /* The source fragment includes a short white tail at its right edge. A
@@ -665,5 +665,174 @@ body:has(#nav-container [class~="bottom-18"]) main {
 
   #interface-container [data-slot="slider-thumb"]::after {
     inset: -0.875rem;
+  }
+}
+
+/* Kuandika Darasa la Pili semantic page components. */
+.page-title {
+  margin-bottom: 1.5rem;
+  color: #a21caf;
+  font-weight: 700;
+}
+
+.source-transcription {
+  margin-bottom: 1.5rem;
+  border-left: 0.35rem solid #0ea5e9;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  padding: 1.25rem 1.5rem;
+  color: #1e293b;
+  white-space: pre-line;
+}
+
+.source-image-grid,
+.response-card .source-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.source-figure,
+.source-model-card {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #bae6fd;
+  border-radius: 1rem;
+  background: #fff;
+  padding: 0.75rem;
+}
+
+.source-figure img,
+.source-model-card img {
+  display: block;
+  width: 100%;
+  max-height: 28rem;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.response-model {
+  margin-bottom: 1rem;
+}
+
+.response-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.response-card {
+  min-width: 0;
+  border: 2px solid #bae6fd;
+  border-radius: 1.25rem;
+  background: #f0f9ff;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 0.08);
+}
+
+.sentence-choice-group {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.75rem 0 1rem;
+  padding: 0;
+  border: 0;
+}
+
+.sentence-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #7c8a96;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #17212b;
+  cursor: pointer;
+}
+
+.sentence-choice input {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-top: 0.1rem;
+  flex: 0 0 auto;
+}
+
+.sentence-choice:focus-within {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.response-card:has(.source-figure + .source-figure) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.response-card:has(.source-figure + .source-figure) > .inclusive-instruction,
+.response-card:has(.source-figure + .source-figure) > .writing-practice,
+.response-card:has(.source-figure + .source-figure) > .sr-only,
+.response-card:has(.source-figure + .source-figure) > textarea {
+  grid-column: 1 / -1;
+}
+
+.inclusive-instruction {
+  margin-block: 0.75rem;
+  color: #0f3f5b;
+  font-weight: 700;
+}
+
+.semantic-model {
+  white-space: pre-line;
+}
+
+.printed-page-number {
+  margin-top: 2rem;
+  color: #0369a1;
+  font-weight: 700;
+  text-align: center;
+}
+
+.visible-book-toc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.visible-book-toc .book-toc-link {
+  border: 1px solid #bae6fd;
+  background: #fff;
+  padding: 0.8rem 1rem;
+}
+
+.cover-figure,
+.allowlisted-full-page-image {
+  display: block;
+  width: min(100%, 54rem);
+  margin-inline: auto;
+}
+
+.cover-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .source-image-grid,
+  .response-card:has(.source-figure + .source-figure) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .response-card:has(.source-figure + .source-figure) > * {
+    grid-column: 1;
+  }
+
+  .source-transcription,
+  .response-card {
+    padding: 1rem;
   }
 }

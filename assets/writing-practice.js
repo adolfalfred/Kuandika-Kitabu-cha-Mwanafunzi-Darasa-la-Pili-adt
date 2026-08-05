@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var STORAGE_PREFIX = "adt-writing-standard-2:";
+  var STORAGE_PREFIX = "adt-kuandika-darasa-la-pili:";
 
   function storageKey(id) {
     return STORAGE_PREFIX + location.pathname + ":" + id;
@@ -47,21 +47,20 @@
 
   function alternativeLabelText(ariaLabel) {
     var label = String(ariaLabel || "").toLowerCase();
-    if (label.indexOf("sentence") !== -1) {
-      return "Enter the sentence by typing or using braille.";
+    if (label.indexOf("sentensi") !== -1) {
+      return "Ingiza sentensi kwa kibodi au kutumia Breli.";
     }
-    if (label.indexOf("word") !== -1 || label.indexOf("name") !== -1) {
-      return "Enter the word by typing or using braille.";
+    if (label.indexOf("neno") !== -1 || label.indexOf("jina") !== -1) {
+      return "Ingiza neno kwa kibodi au kutumia Breli.";
     }
     if (
-      label.indexOf("passage") !== -1 ||
-      label.indexOf("paragraph") !== -1 ||
-      label.indexOf("story") !== -1 ||
-      label.indexOf("composition") !== -1
+      label.indexOf("habari") !== -1 ||
+      label.indexOf("aya") !== -1 ||
+      label.indexOf("hadithi") !== -1
     ) {
-      return "Enter the passage by typing or using braille.";
+      return "Ingiza habari au hadithi kwa kibodi au kutumia Breli.";
     }
-    return "Enter the answer by typing or using braille.";
+    return "Ingiza jibu kwa kibodi au kutumia Breli.";
   }
 
   function responseIsComplete(canvas) {
@@ -84,7 +83,7 @@
     if (!response) return;
 
     var complete = responseIsComplete(canvas);
-    var nextValue = complete ? "Response completed" : "";
+    var nextValue = complete ? "Jibu limekamilika" : "";
     if (response.value !== nextValue) {
       response.value = nextValue;
       response.dispatchEvent(new Event("input", { bubbles: true }));
@@ -93,8 +92,8 @@
     response.classList.toggle("is-complete", complete);
     if (status) {
       status.textContent = complete
-        ? "Your response is saved on this device."
-        : "No response has been added yet.";
+        ? "Jibu lako limehifadhiwa kwenye kifaa hiki."
+        : "Bado hujaongeza jibu.";
     }
   }
 
@@ -301,7 +300,7 @@
     var sourceId = normaliseId(control.id || sectionId + "-answer-" + (index + 1));
     var ariaLabel =
       control.getAttribute("aria-label") ||
-      "Write your answer for this activity";
+      "Andika jibu lako kwa shughuli hii";
     var rows = Number.parseInt(control.getAttribute("data-writing-rows"), 10);
     if (!Number.isFinite(rows) || rows < 1) {
       rows = control.tagName === "INPUT" ? 2 : 4;
@@ -320,20 +319,22 @@
     canvas.tabIndex = 0;
     canvas.setAttribute("role", "img");
     canvas.setAttribute("aria-label", ariaLabel);
+    var describedBy = control.getAttribute("aria-describedby");
+    if (describedBy) canvas.setAttribute("aria-describedby", describedBy);
     canvas.setAttribute("data-practice-storage", sourceId);
     canvasWrap.appendChild(canvas);
     practice.appendChild(canvasWrap);
 
     var actions = element("div", "drawing-actions");
-    var clearButton = element("button", "drawing-clear", "Clear handwriting");
+    var clearButton = element("button", "drawing-clear", "Futa mwandiko");
     clearButton.type = "button";
     clearButton.setAttribute("data-clear-canvas", sourceId);
-    clearButton.setAttribute("aria-label", "Clear the handwriting for " + ariaLabel);
+    clearButton.setAttribute("aria-label", "Futa mwandiko wa: " + ariaLabel);
     actions.appendChild(clearButton);
 
     var statusRow = element("div", "drawing-status-row");
     var responseId = sourceId + "-response";
-    var statusLabel = element("label", "", "Answer status");
+    var statusLabel = element("label", "", "Hali ya jibu");
     statusLabel.htmlFor = responseId;
     statusRow.appendChild(statusLabel);
 
@@ -341,7 +342,7 @@
     response.type = "text";
     response.id = responseId;
     response.readOnly = true;
-    response.setAttribute("aria-label", "Completion status for " + ariaLabel);
+    response.setAttribute("aria-label", "Hali ya kukamilika kwa: " + ariaLabel);
     response.setAttribute("data-canvas-response", sourceId);
     response.setAttribute(
       "data-aria-id",
@@ -382,7 +383,7 @@
     var liveStatus = element(
       "p",
       "writing-practice-status",
-      "No response has been added yet."
+      "Bado hujaongeza jibu."
     );
     liveStatus.setAttribute("aria-live", "polite");
     liveStatus.setAttribute("data-canvas-live-status", sourceId);

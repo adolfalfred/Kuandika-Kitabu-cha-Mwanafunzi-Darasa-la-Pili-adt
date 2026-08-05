@@ -1,0 +1,457 @@
+[
+  {
+    "section_id": "cover_sec001",
+    "href": "index.html",
+    "title": "Jalada la mbele",
+    "chapter_id": "toc_cover",
+    "level": 1
+  },
+  {
+    "section_id": "pg001_sec001",
+    "href": "pg001_sec001.html",
+    "title": "Ukurasa wa anwani",
+    "chapter_id": "toc_pg001_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg002_sec001",
+    "href": "pg002_sec001.html",
+    "title": "Hakimiliki na taarifa za uchapishaji",
+    "chapter_id": "toc_pg002_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg003_sec001",
+    "href": "pg003_sec001.html",
+    "title": "Yaliyomo",
+    "chapter_id": "toc_pg003_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg004_sec001",
+    "href": "pg004_sec001.html",
+    "title": "Shukurani",
+    "chapter_id": "toc_pg004_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg005_sec001",
+    "href": "pg005_sec001.html",
+    "title": "Shukurani (inaendelea)",
+    "chapter_id": "toc_pg005_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg006_sec001",
+    "href": "pg006_sec001.html",
+    "title": "Utangulizi",
+    "chapter_id": "toc_pg006_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg007_sec001",
+    "href": "pg007_sec001.html",
+    "title": "Sura ya Kwanza: Kuandika maneno kwa mwandiko wa chapa wenye vikonyo",
+    "chapter_id": "toc_pg007_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg008_sec001",
+    "href": "pg008_sec001.html",
+    "title": "Kuandika maneno kwa mwandiko wa chapa wenye vikonyo (inaendelea)",
+    "chapter_id": "toc_pg008_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg009_sec001",
+    "href": "pg009_sec001.html",
+    "title": "Kuandika majina ya picha kwa mwandiko wa chapa wenye vikonyo",
+    "chapter_id": "toc_pg009_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg010_sec001",
+    "href": "pg010_sec001.html",
+    "title": "Majina ya picha 9 na 10",
+    "chapter_id": "toc_pg010_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg010_sec002",
+    "href": "pg010_sec002.html",
+    "title": "Kuandika sentensi kwa mwandiko wa chapa wenye vikonyo",
+    "chapter_id": "toc_pg010_sec002",
+    "level": 2
+  },
+  {
+    "section_id": "pg011_sec001",
+    "href": "pg011_sec001.html",
+    "title": "Kuunda sentensi kwa mwandiko wa chapa wenye vikonyo",
+    "chapter_id": "toc_pg011_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg012_sec001",
+    "href": "pg012_sec001.html",
+    "title": "Kuandika sentensi kutokana na picha",
+    "chapter_id": "toc_pg012_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg013_sec001",
+    "href": "pg013_sec001.html",
+    "title": "Sentensi za picha 7 hadi 10",
+    "chapter_id": "toc_pg013_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg013_sec002",
+    "href": "pg013_sec002.html",
+    "title": "Kuandika habari fupi kwa mwandiko wa chapa wenye vikonyo",
+    "chapter_id": "toc_pg013_sec002",
+    "level": 2
+  },
+  {
+    "section_id": "pg014_sec001",
+    "href": "pg014_sec001.html",
+    "title": "Mechi ya mpira wa miguu (inaendelea)",
+    "chapter_id": "toc_pg014_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg015_sec001",
+    "href": "pg015_sec001.html",
+    "title": "Habari fupi kuhusu wewe na usalama barabarani",
+    "chapter_id": "toc_pg015_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg016_sec001",
+    "href": "pg016_sec001.html",
+    "title": "Usalama barabarani",
+    "chapter_id": "toc_pg016_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg016_sec002",
+    "href": "pg016_sec002.html",
+    "title": "Kuandika hadithi fupi kwa mwandiko wa chapa wenye vikonyo",
+    "chapter_id": "toc_pg016_sec002",
+    "level": 2
+  },
+  {
+    "section_id": "pg017_sec001",
+    "href": "pg017_sec001.html",
+    "title": "Kisa cha Mbuni na Binadamu",
+    "chapter_id": "toc_pg017_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg018_sec001",
+    "href": "pg018_sec001.html",
+    "title": "Shughuli ya tano",
+    "chapter_id": "toc_pg018_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg018_sec002",
+    "href": "pg018_sec002.html",
+    "title": "Kuandika herufi kwa mwandiko wa kuunga",
+    "chapter_id": "toc_pg018_sec002",
+    "level": 2
+  },
+  {
+    "section_id": "pg019_sec001",
+    "href": "pg019_sec001.html",
+    "title": "Kuandika maneno kwa mwandiko wa kuunga",
+    "chapter_id": "toc_pg019_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg020_sec001",
+    "href": "pg020_sec001.html",
+    "title": "Kutafuta maneno na kuandika majina ya picha",
+    "chapter_id": "toc_pg020_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg021_sec001",
+    "href": "pg021_sec001.html",
+    "title": "Kuandika majina ya picha kwa mwandiko wa kuunga",
+    "chapter_id": "toc_pg021_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg022_sec001",
+    "href": "pg022_sec001.html",
+    "title": "Kuandika sentensi kwa mwandiko wa kuunga",
+    "chapter_id": "toc_pg022_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg023_sec001",
+    "href": "pg023_sec001.html",
+    "title": "Kuandika sentensi kutokana na picha kwa mwandiko wa kuunga",
+    "chapter_id": "toc_pg023_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg024_sec001",
+    "href": "pg024_sec001.html",
+    "title": "Kuandika sentensi kutokana na picha (inaendelea)",
+    "chapter_id": "toc_pg024_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg025_sec001",
+    "href": "pg025_sec001.html",
+    "title": "Jeni na mama yake waandaa chakula",
+    "chapter_id": "toc_pg025_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg026_sec001",
+    "href": "pg026_sec001.html",
+    "title": "Simba na Panya",
+    "chapter_id": "toc_pg026_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg027_sec001",
+    "href": "pg027_sec001.html",
+    "title": "Simba na Panya (inaendelea)",
+    "chapter_id": "toc_pg027_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg028_sec001",
+    "href": "pg028_sec001.html",
+    "title": "Sura ya Pili: Kutumia alama za uandishi",
+    "chapter_id": "toc_pg028_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg029_sec001",
+    "href": "pg029_sec001.html",
+    "title": "Kuchunguza alama za uandishi katika picha",
+    "chapter_id": "toc_pg029_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg030_sec001",
+    "href": "pg030_sec001.html",
+    "title": "Kuchunguza alama za uandishi (inaendelea)",
+    "chapter_id": "toc_pg030_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg031_sec001",
+    "href": "pg031_sec001.html",
+    "title": "Mazungumzo na alama za uandishi",
+    "chapter_id": "toc_pg031_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg032_sec001",
+    "href": "pg032_sec001.html",
+    "title": "Kuweka alama za uandishi",
+    "chapter_id": "toc_pg032_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg033_sec001",
+    "href": "pg033_sec001.html",
+    "title": "Kijiji cha Mbesa",
+    "chapter_id": "toc_pg033_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg034_sec001",
+    "href": "pg034_sec001.html",
+    "title": "Tujikinge na malaria",
+    "chapter_id": "toc_pg034_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg035_sec001",
+    "href": "pg035_sec001.html",
+    "title": "Umuhimu wa maji na Mtoto mtoro",
+    "chapter_id": "toc_pg035_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg036_sec001",
+    "href": "pg036_sec001.html",
+    "title": "Mtoto mtoro na Familia ya Mzee Mpemba",
+    "chapter_id": "toc_pg036_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg037_sec001",
+    "href": "pg037_sec001.html",
+    "title": "Wanyama wa porini",
+    "chapter_id": "toc_pg037_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg038_sec001",
+    "href": "pg038_sec001.html",
+    "title": "Usafi wa mazingira",
+    "chapter_id": "toc_pg038_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg039_sec001",
+    "href": "pg039_sec001.html",
+    "title": "Lisa mchoraji",
+    "chapter_id": "toc_pg039_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg040_sec001",
+    "href": "pg040_sec001.html",
+    "title": "Kuandika habari kutokana na picha",
+    "chapter_id": "toc_pg040_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg041_sec001",
+    "href": "pg041_sec001.html",
+    "title": "Shughuli ya tatu",
+    "chapter_id": "toc_pg041_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg041_sec002",
+    "href": "pg041_sec002.html",
+    "title": "Kuandika hadithi fupi kwa kuzingatia alama za uandishi",
+    "chapter_id": "toc_pg041_sec002",
+    "level": 2
+  },
+  {
+    "section_id": "pg042_sec001",
+    "href": "pg042_sec001.html",
+    "title": "Bibi Kalulu na Nyumbu na Swala",
+    "chapter_id": "toc_pg042_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg043_sec001",
+    "href": "pg043_sec001.html",
+    "title": "Nyumbu na Swala (inaendelea)",
+    "chapter_id": "toc_pg043_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg044_sec001",
+    "href": "pg044_sec001.html",
+    "title": "Sura ya Tatu: Kuandika sentensi kwa mpangilio sahihi wa maneno",
+    "chapter_id": "toc_pg044_sec001",
+    "level": 1
+  },
+  {
+    "section_id": "pg045_sec001",
+    "href": "pg045_sec001.html",
+    "title": "Kupanga maneno katika sentensi",
+    "chapter_id": "toc_pg045_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg046_sec001",
+    "href": "pg046_sec001.html",
+    "title": "Kuunganisha sehemu za sentensi",
+    "chapter_id": "toc_pg046_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg047_sec001",
+    "href": "pg047_sec001.html",
+    "title": "Kuandika sentensi kwa mtiririko sahihi wa matukio",
+    "chapter_id": "toc_pg047_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg048_sec001",
+    "href": "pg048_sec001.html",
+    "title": "Kupanga sentensi kwa mtiririko sahihi",
+    "chapter_id": "toc_pg048_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg048_sec002",
+    "href": "pg048_sec002.html",
+    "title": "Sentensi za picha kwa mtiririko sahihi",
+    "chapter_id": "toc_pg048_sec002",
+    "level": 3
+  },
+  {
+    "section_id": "pg049_sec001",
+    "href": "pg049_sec001.html",
+    "title": "Sentensi za picha kwa mtiririko sahihi",
+    "chapter_id": "toc_pg049_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg050_sec001",
+    "href": "pg050_sec001.html",
+    "title": "Sentensi za picha (inaendelea)",
+    "chapter_id": "toc_pg050_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg051_sec001",
+    "href": "pg051_sec001.html",
+    "title": "Sentensi za picha (inaendelea)",
+    "chapter_id": "toc_pg051_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg051_sec002",
+    "href": "pg051_sec002.html",
+    "title": "Kuandika habari fupi kwa mtiririko sahihi wa matukio",
+    "chapter_id": "toc_pg051_sec002",
+    "level": 2
+  },
+  {
+    "section_id": "pg052_sec001",
+    "href": "pg052_sec001.html",
+    "title": "Kupanga habari kwa mtiririko sahihi",
+    "chapter_id": "toc_pg052_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg053_sec001",
+    "href": "pg053_sec001.html",
+    "title": "Habari fupi kutokana na picha",
+    "chapter_id": "toc_pg053_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg054_sec001",
+    "href": "pg054_sec001.html",
+    "title": "Habari fupi kutokana na picha (inaendelea)",
+    "chapter_id": "toc_pg054_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "pg055_sec001",
+    "href": "pg055_sec001.html",
+    "title": "Kuandika hadithi fupi kwa mtiririko sahihi wa matukio",
+    "chapter_id": "toc_pg055_sec001",
+    "level": 2
+  },
+  {
+    "section_id": "pg056_sec001",
+    "href": "pg056_sec001.html",
+    "title": "Kuandika hadithi fupi (inaendelea)",
+    "chapter_id": "toc_pg056_sec001",
+    "level": 3
+  },
+  {
+    "section_id": "back_cover_sec001",
+    "href": "back_cover.html",
+    "title": "Jalada la nyuma",
+    "chapter_id": "toc_back_cover",
+    "level": 1
+  }
+]

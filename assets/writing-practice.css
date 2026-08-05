@@ -17,7 +17,7 @@
   border: 2px solid #38bdf8;
   border-radius: 0.75rem;
   background-color: #fff;
-  background-image: url("../images/pg026_im004.png");
+  background-image: url("../images/crops/handwriting-rule.png");
   background-repeat: repeat-y;
   background-position: left 0.4rem;
   background-size: 112.5% 4rem;
@@ -93,6 +93,7 @@
   border: 2px solid #f59e0b;
   border-radius: 0.7rem;
   background: #fffbeb;
+  background-image: none;
   padding: 0.45rem 0.7rem;
   color: #92400e;
   font-family: "Sassoon Primary", "SassoonPrimary", sans-serif;

@@ -1,11 +1,11 @@
 {
-  "title": "Writing Pupil's Book Standard 2",
-  "bundleVersion": "4",
+  "title": "Kuandika Kitabu cha Mwanafunzi Darasa la Pili",
+  "bundleVersion": "2",
   "languages": {
     "available": [
-      "en-GB"
+      "sw-TZ"
     ],
-    "default": "en-GB"
+    "default": "sw-TZ"
   },
   "features": {
     "signLanguage": false,
