@@ -672,7 +672,9 @@ body:has(#nav-container [class~="bottom-18"]) main {
 .page-title {
   margin-bottom: 1.5rem;
   color: #a21caf;
+  font-size: clamp(1.75rem, 8vw, 2.25rem);
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .source-transcription {
@@ -682,6 +684,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
   background: #f8fafc;
   padding: 1.25rem 1.5rem;
   color: #1e293b;
+  overflow-wrap: anywhere;
   white-space: pre-line;
 }
 
@@ -710,6 +713,31 @@ body:has(#nav-container [class~="bottom-18"]) main {
   max-height: 28rem;
   margin-inline: auto;
   object-fit: contain;
+}
+
+.source-image-grid:has(> .source-callout) {
+  align-items: end;
+}
+
+.source-callout {
+  width: min(100%, 18rem);
+  justify-self: center;
+  border: 0;
+  background: transparent;
+  padding: 0.25rem;
+}
+
+.source-callout img {
+  max-height: 18rem;
+}
+
+.source-image-grid:has(> .source-callout) > .source-callout:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.source-qr {
+  width: min(100%, 12rem);
+  justify-self: center;
 }
 
 .response-model {
@@ -831,8 +859,27 @@ body:has(#nav-container [class~="bottom-18"]) main {
     grid-column: 1;
   }
 
+  .source-image-grid:has(> .source-callout) > .source-callout:last-child:nth-child(odd) {
+    grid-column: 1;
+  }
+
   .source-transcription,
   .response-card {
     padding: 1rem;
+  }
+
+  .page-title {
+    margin-bottom: 1rem;
+  }
+
+  .contact-number-list {
+    min-width: 0;
+    padding-left: 1rem;
+  }
+
+  .contact-number-list a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    white-space: normal;
   }
 }
