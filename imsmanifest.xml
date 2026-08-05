@@ -34,9 +34,12 @@
       <file href="assets/fonts/AtkinsonHyperlegible-400-latin.woff2"/>
       <file href="assets/fonts/AtkinsonHyperlegible-700-latin-ext.woff2"/>
       <file href="assets/fonts/AtkinsonHyperlegible-700-latin.woff2"/>
+      <file href="assets/fonts/EduNSWACTFoundation-OFL.txt"/>
+      <file href="assets/fonts/EduNSWACTFoundation.ttf"/>
       <file href="assets/fonts/Maandishi.ttf"/>
       <file href="assets/fonts/SassoonPrimary.ttf"/>
       <file href="assets/fonts/SassoonPrimary.woff2"/>
+      <file href="assets/fonts/SassoonPrimaryHandwriting.ttf"/>
       <file href="assets/interface_translations/en-GB/interface_translations.json"/>
       <file href="assets/interface_translations/sw-TZ/interface_translations.json"/>
       <file href="assets/libs/fontawesome/css/all.min.css"/>
