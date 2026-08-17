@@ -705,12 +705,24 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 /* Kuandika Darasa la Pili semantic page components. */
-.page-title {
-  margin-bottom: 1.5rem;
-  color: #a21caf;
-  font-size: clamp(2rem, 4vw, 2.75rem);
+.printed-preliminary-title {
+  margin: 0 0 1.2rem;
+  color: #0798c9;
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 700;
-  overflow-wrap: anywhere;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.source-chapter-header {
+  width: min(100%, 54rem);
+  margin: 0 auto 1.25rem;
+}
+
+.source-chapter-header img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .source-transcription {
@@ -910,10 +922,6 @@ body:has(#nav-container [class~="bottom-18"]) main {
   .source-transcription,
   .response-card {
     padding: 1rem;
-  }
-
-  .page-title {
-    margin-bottom: 1rem;
   }
 
   .contact-number-list {
