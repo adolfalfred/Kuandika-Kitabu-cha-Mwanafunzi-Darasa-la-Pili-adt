@@ -707,9 +707,9 @@ body:has(#nav-container [class~="bottom-18"]) main {
 
 /* Kuandika Darasa la Pili semantic page components. */
 .printed-preliminary-title {
-  margin: 0 0 1.2rem;
+  margin: 0;
   color: #0798c9;
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: clamp(1.75rem, 4.12cqw, 2.15rem);
   font-weight: 700;
   line-height: 1.15;
   text-align: center;
@@ -733,8 +733,8 @@ body:has(#nav-container [class~="bottom-18"]) main {
   background: transparent;
   padding: 0;
   color: #111827;
-  font-size: clamp(1.15rem, 1.08rem + 0.28vw, 1.35rem);
-  line-height: 1.52;
+  font-size: clamp(1.15rem, 3.06cqw, 1.5rem);
+  line-height: 1.365;
   overflow-wrap: anywhere;
   /* The localization bundle retains these source line breaks so numbered and
      lettered prompts remain one item per line after the reader initializes. */
@@ -745,13 +745,203 @@ body:has(#nav-container [class~="bottom-18"]) main {
    page. Keep that source decoration without turning ordinary pages into
    generic cards or adding a website-only border and shadow. */
 #content > section[data-section-id^="pg"]:not([data-section-id="pg001_sec001"]) {
+  container-type: inline-size;
   width: min(100%, 52rem);
+  min-height: auto;
   margin-inline: auto;
   padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.75rem, 2.5vw, 1.5rem);
   background:
     linear-gradient(90deg, rgb(186 230 253 / 0.38), transparent 1.5rem),
     linear-gradient(270deg, rgb(186 230 253 / 0.38), transparent 1.5rem),
     #fff;
+}
+
+/* The printed source is a 557.906 x 767.669 point portrait page. Keep that
+   measured canvas for source content; digital response areas may extend it. */
+@media (min-width: 641px) {
+  #content > section[data-section-id^="pg"]:not([data-section-id="pg001_sec001"]) {
+    min-height: 71.56rem;
+  }
+}
+
+/* Pages ii-vi use measured source coordinates rather than the generic text
+   flow. The response components are intentionally not included here. */
+#content > section.preliminary-page {
+  position: relative;
+  padding: 0 !important;
+}
+
+.preliminary-layout,
+.visible-book-toc {
+  color: #111827;
+  font-size: clamp(1.15rem, 3.06cqw, 1.5rem);
+  line-height: 1.365;
+}
+
+.preliminary-copy {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.preliminary-pg002 .preliminary-layout,
+.preliminary-pg004 .preliminary-layout,
+.preliminary-pg006 .preliminary-layout {
+  width: 71.65%;
+  margin-left: 12.91%;
+}
+
+.preliminary-pg003 .visible-book-toc,
+.preliminary-pg005 .preliminary-layout {
+  width: 71.65%;
+  margin-left: 15.45%;
+}
+
+.preliminary-imprint {
+  padding-top: 12.64%;
+}
+
+.preliminary-editions {
+  margin-top: 4.1rem;
+}
+
+.preliminary-isbn,
+.preliminary-address {
+  margin-top: 4.05rem;
+}
+
+.preliminary-contacts {
+  display: grid;
+  gap: 0;
+  margin-top: 2.05rem;
+  font-style: normal;
+}
+
+.preliminary-contacts > div {
+  display: grid;
+  grid-template-columns: 9.2rem minmax(0, 1fr);
+  min-height: 2.05rem;
+  align-items: baseline;
+}
+
+.preliminary-contacts strong {
+  font-weight: 400;
+}
+
+.preliminary-contacts a {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.preliminary-rights {
+  margin-top: 6.15rem;
+}
+
+.preliminary-acknowledgements,
+.preliminary-introduction {
+  padding-top: 12.69%;
+}
+
+.preliminary-acknowledgements > .printed-preliminary-title,
+.preliminary-introduction > .printed-preliminary-title {
+  width: 139.56%;
+  margin-left: -18.02%;
+}
+
+.preliminary-ack-intro,
+.preliminary-intro-copy {
+  margin-top: 1.5rem;
+}
+
+.preliminary-credit-list {
+  display: grid;
+}
+
+.preliminary-acknowledgements > .preliminary-credit-list {
+  margin-top: 2.05rem;
+  gap: 1.3rem;
+}
+
+.preliminary-credit-row {
+  display: grid;
+  grid-template-columns: 9.35rem minmax(0, 1fr);
+  align-items: start;
+}
+
+.preliminary-credit-row > strong,
+.preliminary-credit-row > p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.preliminary-credit-row > strong {
+  font-weight: 700;
+}
+
+.preliminary-acknowledgements-continuation {
+  padding-top: 12.64%;
+}
+
+.preliminary-acknowledgements-continuation > .preliminary-credit-list {
+  gap: 1.55rem;
+}
+
+.preliminary-acknowledgements-continuation .preliminary-credit-row:nth-child(3) {
+  margin-top: 0.55rem;
+}
+
+.preliminary-ack-closing {
+  margin-top: 2.05rem;
+}
+
+.source-figure.preliminary-signature {
+  width: 10.9rem;
+  margin: 3.75rem 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.preliminary-signatory {
+  margin-top: 0.8rem;
+}
+
+.preliminary-signatory::first-line,
+.preliminary-institution {
+  font-weight: 400;
+}
+
+.preliminary-intro-list {
+  margin-top: 0.3rem;
+}
+
+.preliminary-resource {
+  margin: 3rem 0 0;
+  white-space: normal;
+}
+
+.preliminary-resource a {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.source-figure.preliminary-qr {
+  width: 6.7rem;
+  margin: 2.45rem 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  justify-self: start;
+}
+
+.preliminary-institution {
+  width: fit-content;
+  margin: 1.6rem 0 0 auto;
+  font-weight: 700;
 }
 
 .source-image-grid,
@@ -941,37 +1131,69 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .visible-book-toc {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
+  display: block;
+  margin-top: 0;
+  padding-top: 12.69%;
 }
 
 .visible-book-toc .book-toc-link {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
+  min-height: 0;
   border: 0;
   background: transparent;
-  padding: 0.35rem 0;
+  padding: 0;
   color: #111827;
   text-decoration: none;
 }
 
-.visible-book-toc .book-toc-link::after {
-  order: 1;
+.book-toc-preliminary-link {
+  display: grid;
+  grid-template-columns: max-content minmax(1.5rem, 1fr) max-content;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.book-toc-preliminary-link:first-of-type {
+  margin-top: 1.45rem;
+}
+
+.book-toc-preliminary-link + .book-toc-preliminary-link {
+  margin-top: 1.05rem;
+}
+
+.book-toc-preliminary-link > strong,
+.book-toc-chapter-link > strong {
+  color: #09a9dc;
+  font-weight: 700;
+}
+
+.book-toc-leader {
   min-width: 1.5rem;
-  flex: 1 1 auto;
   border-bottom: 0.12rem dotted #64748b;
-  content: "";
 }
 
-.visible-book-toc .book-toc-link > span:first-child {
-  order: 0;
+.book-toc-chapter-link {
+  display: block;
+  margin-top: 4.15rem;
 }
 
-.visible-book-toc .book-toc-link > span:last-child {
-  order: 2;
+.book-toc-chapter-link + .book-toc-chapter-link {
+  margin-top: 2.05rem;
+}
+
+.book-toc-detail {
+  display: grid;
+  grid-template-columns: max-content minmax(1.5rem, 1fr) max-content;
+  align-items: end;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.book-toc-detail > span:first-child {
+  white-space: pre-line;
+}
+
+.book-toc-detail > .book-toc-leader {
+  margin-bottom: 0.45rem;
 }
 
 .cover-figure,
