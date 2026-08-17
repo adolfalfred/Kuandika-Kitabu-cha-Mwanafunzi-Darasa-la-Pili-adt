@@ -117,7 +117,6 @@
       <file href="content/i18n/sw-TZ/audio/pg008_im002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_model001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_model002.mp3"/>
-      <file href="content/i18n/sw-TZ/audio/pg008_n0002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_n0021.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_n0022.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_n0023.mp3"/>
@@ -127,6 +126,7 @@
       <file href="content/i18n/sw-TZ/audio/pg008_sec001-answer-2-ruling.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_sec001-answer-3-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg008_sec001-answer-3-ruling.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg008_sec001-prelude-3.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_im001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_im002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_im003.mp3"/>
@@ -166,7 +166,6 @@
       <file href="content/i18n/sw-TZ/audio/pg010_sec002-answer-1-ruling.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg011_model001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg011_model002.mp3"/>
-      <file href="content/i18n/sw-TZ/audio/pg011_n0002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg011_n0021.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg011_n0022.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg011_sec001-answer-1-keyboard-braille-label.mp3"/>
@@ -264,7 +263,6 @@
       <file href="content/i18n/sw-TZ/audio/pg020_im001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_im002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_model001.mp3"/>
-      <file href="content/i18n/sw-TZ/audio/pg020_n0002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_n0021.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_n0022.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_n0023.mp3"/>
@@ -274,6 +272,7 @@
       <file href="content/i18n/sw-TZ/audio/pg020_sec001-answer-2-ruling.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_sec001-answer-3-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg020_sec001-answer-3-ruling.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg020_sec001-prelude-2.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg021_im001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg021_im002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg021_im003.mp3"/>
@@ -306,14 +305,15 @@
       <file href="content/i18n/sw-TZ/audio/pg021_sec001-answer-7-ruling.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg021_sec001-answer-8-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg021_sec001-answer-8-ruling.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg022_model001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_model002.mp3"/>
-      <file href="content/i18n/sw-TZ/audio/pg022_n0002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_n0021.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_n0022.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_sec001-answer-1-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_sec001-answer-1-ruling.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_sec001-answer-2-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg022_sec001-answer-2-ruling.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg022_sec001-prelude-1.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg023_im001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg023_im002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg023_im003.mp3"/>
@@ -660,9 +660,14 @@
       <file href="images/cover_im001.png"/>
       <file href="images/crops/handwriting-rule.png"/>
       <file href="images/crops/pg007_chapter_header.png"/>
+      <file href="images/crops/pg008_continued_words.png"/>
       <file href="images/crops/pg008_word_bank.png"/>
+      <file href="images/crops/pg011_sentence_table_example.png"/>
       <file href="images/crops/pg011_sentence_word_bank.png"/>
+      <file href="images/crops/pg011_sentence_word_bank_example.png"/>
       <file href="images/crops/pg020_word_search.png"/>
+      <file href="images/crops/pg020_word_search_example.png"/>
+      <file href="images/crops/pg022_joined_copy_sentences.png"/>
       <file href="images/crops/pg022_joined_sentence_word_bank.png"/>
       <file href="images/crops/pg028_chapter_header.png"/>
       <file href="images/crops/pg044_chapter_header.png"/>

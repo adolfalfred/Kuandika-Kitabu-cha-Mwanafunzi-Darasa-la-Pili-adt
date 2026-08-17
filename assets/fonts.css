@@ -975,9 +975,20 @@ body:has(#nav-container [class~="bottom-18"]) main {
 .source-model-card img {
   display: block;
   width: 100%;
-  max-height: 28rem;
   margin-inline: auto;
   object-fit: contain;
+}
+
+.source-figure img {
+  max-height: 28rem;
+}
+
+/* Instructional crops must use the response card's full width.  A shared
+   height cap makes tall word grids and handwriting examples look shrunken,
+   even though their pixels are technically still present. */
+.source-model-card img {
+  height: auto;
+  max-height: none;
 }
 
 .source-image-grid > .source-figure:only-child {
