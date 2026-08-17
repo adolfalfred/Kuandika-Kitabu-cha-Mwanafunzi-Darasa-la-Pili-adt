@@ -127,10 +127,11 @@ body {
 
 /* Keep source and website credits easy to read and tap, including long URLs. */
 #content .external-reference {
-  padding: 1.25rem;
-  border: 1px solid #bae6fd;
-  border-radius: 0.75rem;
-  background: #ffffff;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   overflow-wrap: anywhere;
 }
 
@@ -715,7 +716,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-chapter-header {
-  width: min(100%, 54rem);
+  width: min(100%, 39rem);
   margin: 0 auto 1.25rem;
 }
 
@@ -732,8 +733,8 @@ body:has(#nav-container [class~="bottom-18"]) main {
   background: transparent;
   padding: 0;
   color: #111827;
-  font-size: clamp(1.3rem, 1.18rem + 0.38vw, 1.55rem);
-  line-height: 1.7;
+  font-size: clamp(1.15rem, 1.08rem + 0.28vw, 1.35rem);
+  line-height: 1.52;
   overflow-wrap: anywhere;
   /* The localization bundle retains these source line breaks so numbered and
      lettered prompts remain one item per line after the reader initializes. */
@@ -744,10 +745,12 @@ body:has(#nav-container [class~="bottom-18"]) main {
    page. Keep that source decoration without turning ordinary pages into
    generic cards or adding a website-only border and shadow. */
 #content > section[data-section-id^="pg"]:not([data-section-id="pg001_sec001"]) {
-  padding: clamp(0.5rem, 2vw, 1.5rem) clamp(0.75rem, 3vw, 2.25rem);
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  padding: clamp(0.5rem, 1.5vw, 1rem) clamp(0.75rem, 2.5vw, 1.5rem);
   background:
-    linear-gradient(90deg, rgb(186 230 253 / 0.34), transparent 3.25rem),
-    linear-gradient(270deg, rgb(186 230 253 / 0.34), transparent 3.25rem),
+    linear-gradient(90deg, rgb(186 230 253 / 0.38), transparent 1.5rem),
+    linear-gradient(270deg, rgb(186 230 253 / 0.38), transparent 1.5rem),
     #fff;
 }
 
@@ -789,7 +792,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
 
 .source-image-grid > .source-figure:only-child {
   grid-column: 1 / -1;
-  width: min(100%, 42rem);
+  width: min(100%, 37rem);
   justify-self: center;
 }
 
@@ -798,7 +801,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-callout {
-  width: min(100%, 42rem);
+  width: min(100%, 33rem);
   justify-self: center;
   border: 0;
   background: transparent;
@@ -829,6 +832,16 @@ body:has(#nav-container [class~="bottom-18"]) main {
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.response-stack.source-two-column-responses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.source-two-column-responses > .response-card {
+  height: 100%;
 }
 
 .response-card {
@@ -899,10 +912,32 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .printed-page-number {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 2rem;
   color: #0369a1;
   font-weight: 700;
   text-align: center;
+}
+
+.printed-page-number::before,
+.printed-page-number::after {
+  height: 0.22rem;
+  flex: 1 1 auto;
+  background: linear-gradient(90deg, transparent, #09a9dc 18%, #09a9dc);
+  content: "";
+}
+
+.printed-page-number::after {
+  background: linear-gradient(90deg, #09a9dc, #09a9dc 82%, transparent);
+}
+
+.printed-page-number > span {
+  background: #09a9dc;
+  border-radius: 999px;
+  color: #fff;
+  padding: 0.05rem 0.55rem 0.12rem;
 }
 
 .visible-book-toc {
@@ -913,9 +948,30 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .visible-book-toc .book-toc-link {
-  border: 1px solid #bae6fd;
-  background: #fff;
-  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  border: 0;
+  background: transparent;
+  padding: 0.35rem 0;
+  color: #111827;
+  text-decoration: none;
+}
+
+.visible-book-toc .book-toc-link::after {
+  order: 1;
+  min-width: 1.5rem;
+  flex: 1 1 auto;
+  border-bottom: 0.12rem dotted #64748b;
+  content: "";
+}
+
+.visible-book-toc .book-toc-link > span:first-child {
+  order: 0;
+}
+
+.visible-book-toc .book-toc-link > span:last-child {
+  order: 2;
 }
 
 .cover-figure,
@@ -933,7 +989,8 @@ body:has(#nav-container [class~="bottom-18"]) main {
 
 @media (max-width: 640px) {
   .source-image-grid,
-  .response-card:has(.source-figure + .source-figure) {
+  .response-card:has(.source-figure + .source-figure),
+  .response-stack.source-two-column-responses {
     grid-template-columns: minmax(0, 1fr);
   }
 
