@@ -2,6 +2,7 @@
   "use strict";
 
   var STORAGE_PREFIX = "adt-kuandika-darasa-la-pili:";
+  var DRAWING_STROKE_CSS_PX = 2.25;
 
   function storageKey(id) {
     return STORAGE_PREFIX + location.pathname + ":" + id;
@@ -144,7 +145,7 @@
       context.clearRect(0, 0, width, height);
       context.lineCap = "round";
       context.lineJoin = "round";
-      context.lineWidth = Math.max(4, 4.5 * Math.min(window.devicePixelRatio || 1, 2));
+      context.lineWidth = DRAWING_STROKE_CSS_PX * Math.min(window.devicePixelRatio || 1, 2);
       context.strokeStyle = "#172033";
       context.fillStyle = "#172033";
 
