@@ -1,6 +1,6 @@
 {
   "title": "Kuandika Kitabu cha Mwanafunzi Darasa la Pili",
-  "bundleVersion": "15",
+  "bundleVersion": "14",
   "languages": {
     "available": [
       "sw-TZ"
@@ -8,7 +8,7 @@
     "default": "sw-TZ"
   },
   "features": {
-    "signLanguage": true,
+    "signLanguage": false,
     "easyRead": true,
     "glossary": true,
     "eli5": false,
