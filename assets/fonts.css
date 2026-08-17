@@ -726,18 +726,29 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-transcription {
-  margin-bottom: 1.5rem;
-  border-left: 0.35rem solid #0ea5e9;
-  border-radius: 0.75rem;
-  background: #f8fafc;
-  padding: 1.25rem 1.5rem;
-  color: #1e293b;
+  margin: 0 0 1.5rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: #111827;
   font-size: clamp(1.3rem, 1.18rem + 0.38vw, 1.55rem);
   line-height: 1.7;
   overflow-wrap: anywhere;
   /* The localization bundle retains these source line breaks so numbered and
      lettered prompts remain one item per line after the reader initializes. */
   white-space: pre-line;
+}
+
+/* The printed book uses a pale blue edge wash around a plain white semantic
+   page. Keep that source decoration without turning ordinary pages into
+   generic cards or adding a website-only border and shadow. */
+#content > section[data-section-id^="pg"]:not([data-section-id="pg001_sec001"]) {
+  padding: clamp(0.5rem, 2vw, 1.5rem) clamp(0.75rem, 3vw, 2.25rem);
+  background:
+    linear-gradient(90deg, rgb(186 230 253 / 0.34), transparent 3.25rem),
+    linear-gradient(270deg, rgb(186 230 253 / 0.34), transparent 3.25rem),
+    #fff;
 }
 
 .source-image-grid,
@@ -758,6 +769,15 @@ body:has(#nav-container [class~="bottom-18"]) main {
   padding: 0.75rem;
 }
 
+/* General illustrations inherit their framing from the printed book. The
+   blue cards remain reserved for the unchanged interactive answer items. */
+.source-image-grid > .source-figure {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
 .source-figure img,
 .source-model-card img {
   display: block;
@@ -765,6 +785,12 @@ body:has(#nav-container [class~="bottom-18"]) main {
   max-height: 28rem;
   margin-inline: auto;
   object-fit: contain;
+}
+
+.source-image-grid > .source-figure:only-child {
+  grid-column: 1 / -1;
+  width: min(100%, 42rem);
+  justify-self: center;
 }
 
 .source-image-grid:has(> .source-callout) {
