@@ -1229,6 +1229,32 @@ body:has(#nav-container [class~="bottom-18"]) main {
   color: #d2148c;
 }
 
+.source-word-bank {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  margin: 0.35rem 0 0.8rem;
+  border: 2px solid #f43f5e;
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 0.45rem 1rem 0.55rem;
+  color: #18181b;
+  font-family: "Sassoon Primary", Maandishi, sans-serif;
+  font-size: clamp(1.3rem, 3.2cqw, 1.75rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .source-word-bank {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem 0.75rem;
+  }
+}
+
 .response-stack {
   display: flex;
   flex-direction: column;
