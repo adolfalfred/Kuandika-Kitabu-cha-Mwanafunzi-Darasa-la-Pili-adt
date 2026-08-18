@@ -1110,6 +1110,70 @@ body:has(#nav-container [class~="bottom-18"]) main {
   line-height: 1;
 }
 
+.source-table-model {
+  min-width: 0;
+  margin-bottom: 1rem;
+  white-space: normal;
+}
+
+.source-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+#content .source-book-table {
+  min-width: 38rem;
+  border: 2px solid #f43f5e;
+  background: #fff;
+  color: #18181b;
+  font-family: "Sassoon Primary", Maandishi, sans-serif;
+  font-size: clamp(1rem, 2.4cqw, 1.3rem);
+  line-height: 1.35;
+  table-layout: fixed;
+}
+
+#content .source-book-table .source-table-accent {
+  color: #0585d1;
+}
+
+#content .source-book-table th,
+#content .source-book-table td {
+  border: 1.5px solid #f43f5e;
+  padding: 0.55rem 0.65rem;
+}
+
+#content .source-book-table th {
+  background: #fecaca;
+  font-weight: 700;
+  text-align: left;
+}
+
+#content .source-matching-table th:first-child,
+#content .source-matching-table td:first-child {
+  width: 3.5rem;
+  text-align: center;
+}
+
+#content .source-matching-table th:nth-child(2),
+#content .source-matching-table td:nth-child(2) {
+  width: 48%;
+}
+
+#content .source-sequence-table th,
+#content .source-sequence-table td {
+  width: 50%;
+}
+
+.source-table-example {
+  margin: 0.65rem 0 0;
+  font-size: clamp(1.05rem, 2.6cqw, 1.35rem);
+}
+
+.source-table-example strong {
+  color: #d2148c;
+}
+
 .response-stack {
   display: flex;
   flex-direction: column;
