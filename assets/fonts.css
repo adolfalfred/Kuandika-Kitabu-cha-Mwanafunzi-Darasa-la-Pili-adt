@@ -1035,16 +1035,6 @@ body:has(#nav-container [class~="bottom-18"]) main {
   margin-top: 2rem;
 }
 
-.response-stack.source-two-column-responses {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-}
-
-.source-two-column-responses > .response-card {
-  height: 100%;
-}
-
 .response-card {
   min-width: 0;
   border: 2px solid #bae6fd;
@@ -1085,19 +1075,6 @@ body:has(#nav-container [class~="bottom-18"]) main {
 .sentence-choice:focus-within {
   outline: 3px solid #005fcc;
   outline-offset: 2px;
-}
-
-.response-card:has(.source-figure + .source-figure) {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.response-card:has(.source-figure + .source-figure) > .inclusive-instruction,
-.response-card:has(.source-figure + .source-figure) > .writing-practice,
-.response-card:has(.source-figure + .source-figure) > .sr-only,
-.response-card:has(.source-figure + .source-figure) > textarea {
-  grid-column: 1 / -1;
 }
 
 .inclusive-instruction {
@@ -1221,14 +1198,8 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 @media (max-width: 640px) {
-  .source-image-grid,
-  .response-card:has(.source-figure + .source-figure),
-  .response-stack.source-two-column-responses {
+  .source-image-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .response-card:has(.source-figure + .source-figure) > * {
-    grid-column: 1;
   }
 
   .source-image-grid:has(> .source-callout) > .source-callout:last-child:nth-child(odd) {
