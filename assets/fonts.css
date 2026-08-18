@@ -1035,6 +1035,14 @@ body:has(#nav-container [class~="bottom-18"]) main {
   margin-top: 2rem;
 }
 
+/* A completed answer area and the next printed question are separate learning
+   groups. Preserve a clear boundary even when the hidden narration node sits
+   between them in the DOM. */
+.response-stack + .source-transcription,
+.response-stack + .sr-only + .source-transcription {
+  margin-top: clamp(2.5rem, 6cqw, 3.5rem);
+}
+
 .response-card {
   min-width: 0;
   border: 2px solid #bae6fd;
