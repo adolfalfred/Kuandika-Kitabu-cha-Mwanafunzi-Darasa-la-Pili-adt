@@ -226,6 +226,27 @@ body {
   flex: 0 0 auto;
 }
 
+/* A printed example can continue at the top of the next physical source page
+   while still belonging to the preceding question. Keep that label and model
+   together immediately before the question's answer area. */
+#content .source-continuation-example {
+  margin-top: 1.25rem;
+}
+
+#content .source-example-label {
+  width: fit-content;
+  margin: 0 0 0.35rem;
+  color: #d2148c;
+  font-size: clamp(1.25rem, 3.2cqw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#content .handwriting-guide.source-continuation-model {
+  min-height: var(--handwriting-row-height);
+  margin: 0 0 1rem;
+}
+
 /* Some complete source passages and example sentences are printed directly
    on the four-line guides rather than as ordinary prose. The semantic text
    remains responsive and narratable while retaining the source ruling. */
