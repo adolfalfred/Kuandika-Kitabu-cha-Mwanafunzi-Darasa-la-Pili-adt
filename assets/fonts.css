@@ -1090,6 +1090,26 @@ body:has(#nav-container [class~="bottom-18"]) main {
   margin-bottom: 1rem;
 }
 
+.source-labeled-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.source-labeled-image .response-model {
+  margin-bottom: 0;
+}
+
+.source-image-marker {
+  width: fit-content;
+  color: #111827;
+  font-family: "Sassoon Primary", Maandishi, sans-serif;
+  font-size: clamp(1.4rem, 3.5cqw, 1.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
 .response-stack {
   display: flex;
   flex-direction: column;
