@@ -407,28 +407,13 @@
     var content = document.getElementById("content");
     if (!content || content.dataset.narrationHighlightMirror === "true") return;
     content.dataset.narrationHighlightMirror = "true";
-
-    var fallback = element("div", "bg-yellow-300", "");
-    fallback.id = "adt-narration-highlight-fallback";
-    fallback.hidden = true;
-    fallback.setAttribute("aria-hidden", "true");
-    fallback.style.position = "fixed";
-    fallback.style.left = "50%";
-    fallback.style.bottom = "5.5rem";
-    fallback.style.transform = "translateX(-50%)";
-    fallback.style.zIndex = "80";
-    fallback.style.maxWidth = "min(92vw, 44rem)";
-    fallback.style.padding = "0.35rem 0.8rem";
-    fallback.style.borderRadius = "0.5rem";
-    fallback.style.boxShadow = "0 0.15rem 0.5rem rgba(15, 23, 42, 0.28)";
-    fallback.style.color = "#111827";
-    fallback.style.fontSize = "1.2rem";
-    fallback.style.fontWeight = "700";
-    fallback.style.lineHeight = "1.35";
-    fallback.style.pointerEvents = "none";
-    document.body.appendChild(fallback);
-
-    var mirroredWord = null;
+    var highlightName = "adt-narration-word";
+    var overlay = element("div", "adt-narration-word-overlay", "");
+    overlay.id = "adt-narration-word-overlay";
+    overlay.hidden = true;
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.appendChild(overlay);
+    var activeImage = null;
     var animationFrame = 0;
 
     function normaliseWord(value) {
@@ -438,10 +423,10 @@
     }
 
     function clearMirror() {
-      if (mirroredWord) mirroredWord.classList.remove("bg-yellow-300");
-      mirroredWord = null;
-      fallback.hidden = true;
-      fallback.textContent = "";
+      if (window.CSS && CSS.highlights) CSS.highlights.delete(highlightName);
+      overlay.hidden = true;
+      if (activeImage) activeImage.classList.remove("adt-narration-image-active");
+      activeImage = null;
     }
 
     function highlightTargetFor(source) {
@@ -450,64 +435,45 @@
       return content.querySelector('[data-highlight-for="' + stableId + '"]');
     }
 
-    function prepareTargetWords(target) {
-      var existing = Array.prototype.slice.call(
-        target.querySelectorAll("[data-highlight-mirror-word]")
-      );
-      if (existing.length) return existing;
-
-      var walker = document.createTreeWalker(
-        target,
-        NodeFilter.SHOW_TEXT,
-        {
-          acceptNode: function (node) {
-            var parent = node.parentElement;
-            if (!parent || !/\S/.test(node.nodeValue || "")) {
-              return NodeFilter.FILTER_REJECT;
-            }
-            if (parent.closest(".sr-only") || parent.closest("script, style, noscript")) {
-              return NodeFilter.FILTER_REJECT;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-          },
-        }
-      );
+    function targetWordRanges(target) {
       var textNodes = [];
-      var current = walker.nextNode();
-      while (current) {
-        textNodes.push(current);
-        current = walker.nextNode();
+      function collectTextNodes(node) {
+        Array.prototype.forEach.call(node.childNodes || [], function (child) {
+          if (child.nodeType === 3 && /\S/.test(child.nodeValue || "")) {
+            textNodes.push(child);
+            return;
+          }
+          if (
+            child.nodeType === 1 &&
+            !child.matches(".sr-only, script, style, noscript")
+          ) {
+            collectTextNodes(child);
+          }
+        });
       }
-
-      var wordIndex = 0;
-      textNodes.forEach(function (textNode) {
-        var fragment = document.createDocumentFragment();
-        String(textNode.nodeValue || "")
-          .split(/(\s+)/)
-          .forEach(function (part) {
-            if (!part) return;
-            if (/^\s+$/.test(part)) {
-              fragment.appendChild(document.createTextNode(part));
-              return;
-            }
-            var word = element("span", "", part);
-            word.setAttribute("data-highlight-mirror-word", String(wordIndex));
-            fragment.appendChild(word);
-            wordIndex += 1;
-          });
-        textNode.parentNode.replaceChild(fragment, textNode);
+      collectTextNodes(target);
+      var ranges = [];
+      textNodes.forEach(function (current) {
+        var value = String(current.nodeValue || "");
+        var matcher = /\S+/g;
+        var match = matcher.exec(value);
+        while (match) {
+          var range = document.createRange();
+          range.setStart(current, match.index);
+          range.setEnd(current, match.index + match[0].length);
+          ranges.push(range);
+          match = matcher.exec(value);
+        }
       });
-      return Array.prototype.slice.call(
-        target.querySelectorAll("[data-highlight-mirror-word]")
-      );
+      return ranges;
     }
 
-    function nearestMatchingIndex(targetWords, activeText, expectedIndex) {
+    function nearestMatchingIndex(targetRanges, activeText, expectedIndex) {
       var activeNormalised = normaliseWord(activeText);
       if (!activeNormalised) return expectedIndex;
       var candidates = [];
-      targetWords.forEach(function (word, index) {
-        if (normaliseWord(word.textContent) === activeNormalised) candidates.push(index);
+      targetRanges.forEach(function (range, index) {
+        if (normaliseWord(range.toString()) === activeNormalised) candidates.push(index);
       });
       if (!candidates.length) return expectedIndex;
       return candidates.reduce(function (best, candidate) {
@@ -532,39 +498,56 @@
         return;
       }
       var target = highlightTargetFor(source);
-      var targetWords = target ? prepareTargetWords(target) : [];
-      if (!targetWords.length) {
-        if (mirroredWord) mirroredWord.classList.remove("bg-yellow-300");
-        mirroredWord = null;
-        fallback.textContent = activeWord.textContent || "";
-        fallback.hidden = !fallback.textContent;
+      var targetRanges = target ? targetWordRanges(target) : [];
+      if (!targetRanges.length) {
+        if (window.CSS && CSS.highlights) CSS.highlights.delete(highlightName);
+        overlay.hidden = true;
+        var stableId = source.getAttribute("data-id");
+        var image = stableId
+          ? content.querySelector('[data-highlight-image-for="' + stableId + '"]')
+          : null;
+        if (activeImage && activeImage !== image) {
+          activeImage.classList.remove("adt-narration-image-active");
+        }
+        activeImage = image;
+        if (activeImage) activeImage.classList.add("adt-narration-image-active");
         return;
       }
 
-      fallback.hidden = true;
-      fallback.textContent = "";
-      var sourceWords = source.querySelectorAll("[data-word-index]");
-      var sourceIndex = Number.parseInt(
-        activeWord.getAttribute("data-word-index") || "0",
-        10
-      );
-      if (!Number.isFinite(sourceIndex)) sourceIndex = 0;
-      var expectedIndex = sourceWords.length > 1
-        ? Math.round(sourceIndex * (targetWords.length - 1) / (sourceWords.length - 1))
-        : 0;
-      var targetIndex = nearestMatchingIndex(
-        targetWords,
-        activeWord.textContent,
-        expectedIndex
-      );
-      var nextWord = targetWords[
-        Math.max(0, Math.min(targetWords.length - 1, targetIndex))
-      ];
-      if (mirroredWord && mirroredWord !== nextWord) {
-        mirroredWord.classList.remove("bg-yellow-300");
+      if (activeImage) activeImage.classList.remove("adt-narration-image-active");
+      activeImage = null;
+      try {
+        var sourceWords = source.querySelectorAll("[data-word-index]");
+        var sourceIndex = Number.parseInt(
+          activeWord.getAttribute("data-word-index") || "0",
+          10
+        );
+        if (!Number.isFinite(sourceIndex)) sourceIndex = 0;
+        var expectedIndex = sourceWords.length > 1
+          ? Math.round(sourceIndex * (targetRanges.length - 1) / (sourceWords.length - 1))
+          : 0;
+        var targetIndex = nearestMatchingIndex(
+          targetRanges,
+          activeWord.textContent,
+          expectedIndex
+        );
+        var nextRange = targetRanges[
+          Math.max(0, Math.min(targetRanges.length - 1, targetIndex))
+        ];
+        if (window.CSS && CSS.highlights && window.Highlight) {
+          overlay.hidden = true;
+          CSS.highlights.set(highlightName, new Highlight(nextRange));
+        } else {
+          var rect = nextRange.getBoundingClientRect();
+          overlay.style.left = (rect.left + window.scrollX) + "px";
+          overlay.style.top = (rect.top + window.scrollY) + "px";
+          overlay.style.width = rect.width + "px";
+          overlay.style.height = rect.height + "px";
+          overlay.hidden = rect.width <= 0 || rect.height <= 0;
+        }
+      } catch (error) {
+        overlay.hidden = true;
       }
-      mirroredWord = nextWord;
-      mirroredWord.classList.add("bg-yellow-300");
     }
 
     function scheduleSynchronisation() {
@@ -579,6 +562,8 @@
       attributes: true,
       attributeFilter: ["class"],
     });
+    window.addEventListener("scroll", scheduleSynchronisation, { passive: true });
+    window.addEventListener("resize", scheduleSynchronisation);
     scheduleSynchronisation();
   }
 

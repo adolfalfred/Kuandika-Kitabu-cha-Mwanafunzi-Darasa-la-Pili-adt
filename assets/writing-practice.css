@@ -172,3 +172,22 @@
     display: none;
   }
 }
+/* Paint narration feedback without adding spans or changing book typography. */
+::highlight(adt-narration-word) {
+  background-color: #fde047;
+  color: #111827;
+}
+
+.adt-narration-word-overlay {
+  position: absolute;
+  z-index: 55;
+  border-radius: 0.12rem;
+  background: rgba(253, 224, 71, 0.62);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+[data-highlight-image-for].adt-narration-image-active {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.3rem #fde047;
+}
