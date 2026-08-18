@@ -803,6 +803,27 @@ body:has(#nav-container [class~="bottom-18"]) main {
   white-space: pre-line;
 }
 
+/* Match the source book's question/list hierarchy. The lettered question
+   begins at the main margin, while numbered sentences begin farther inside;
+   wrapped lines align with their paragraph text instead of the marker. */
+#content .source-question-paragraph,
+#content .source-numbered-paragraph {
+  display: block;
+  overflow-wrap: normal;
+}
+
+#content .source-question-paragraph {
+  margin: 0.55rem 0 0.7rem;
+  padding-left: 2rem;
+  text-indent: -2rem;
+}
+
+#content .source-numbered-paragraph {
+  margin: 0.5rem 0 0.5rem clamp(2rem, 6cqw, 3.25rem);
+  padding-left: 1.8rem;
+  text-indent: -1.8rem;
+}
+
 /* The printed book uses a pale blue edge wash around a plain white semantic
    page. Keep that source decoration without turning ordinary pages into
    generic cards or adding a website-only border and shadow. */
