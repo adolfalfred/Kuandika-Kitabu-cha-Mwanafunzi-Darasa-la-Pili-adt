@@ -196,6 +196,17 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* Some complete source passages and example sentences are printed directly
+   on the four-line guides rather than as ordinary prose. The semantic text
+   remains responsive and narratable while retaining the source ruling. */
+#content .source-lined-passage {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--handwriting-row-height);
+  margin: 0.75rem 0 1rem;
+}
+
 #content ol.handwriting-guide {
   list-style-position: inside;
 }
