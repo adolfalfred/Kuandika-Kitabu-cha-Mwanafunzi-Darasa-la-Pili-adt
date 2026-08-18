@@ -4302,10 +4302,10 @@
       ],
       "tactileResourceRequired": true,
       "visualDescriptionTargets": [
-        "pg053_im001",
         "pg053_im002",
         "pg053_im003",
         "pg053_im004",
+        "pg053_im001",
         "pg053_im005",
         "pg053_im006"
       ],
@@ -4347,12 +4347,12 @@
       ],
       "tactileResourceRequired": true,
       "visualDescriptionTargets": [
+        "pg054_im006",
         "pg054_im001",
         "pg054_im002",
         "pg054_im003",
-        "pg054_im004",
         "pg054_im005",
-        "pg054_im006"
+        "pg054_im004"
       ],
       "nativeBrailleInputAvailable": true,
       "sixKeyPilotCandidate": false,
@@ -4430,12 +4430,12 @@
       ],
       "tactileResourceRequired": true,
       "visualDescriptionTargets": [
-        "pg055_im001",
         "pg055_im002",
         "pg055_im003",
+        "pg055_im001",
         "pg055_im004",
-        "pg056_im003",
-        "pg056_im004"
+        "pg056_im004",
+        "pg056_im003"
       ],
       "nativeBrailleInputAvailable": true,
       "sixKeyPilotCandidate": false,
