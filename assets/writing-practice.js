@@ -403,6 +403,17 @@
     return canvas;
   }
 
+  function initialiseTableAnswers() {
+    document.querySelectorAll("textarea[data-table-answer]").forEach(function (control) {
+      var storageId = normaliseId(control.id || "table-answer") + "-table";
+      var stored = readStored(storageId);
+      if (stored !== null) control.value = stored;
+      control.addEventListener("input", function () {
+        writeStored(storageId, control.value);
+      });
+    });
+  }
+
   function initialiseNarrationHighlightMirroring() {
     var content = document.getElementById("content");
     if (!content || content.dataset.narrationHighlightMirror === "true") return;
@@ -576,6 +587,7 @@
     );
     var canvases = controls.map(convertControl).filter(Boolean);
     canvases.forEach(initialiseCanvas);
+    initialiseTableAnswers();
     initialiseNarrationHighlightMirroring();
     document.documentElement.dataset.writingPracticeReady = "true";
   }
