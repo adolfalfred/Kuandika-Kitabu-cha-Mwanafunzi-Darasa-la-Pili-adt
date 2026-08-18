@@ -403,6 +403,185 @@
     return canvas;
   }
 
+  function initialiseNarrationHighlightMirroring() {
+    var content = document.getElementById("content");
+    if (!content || content.dataset.narrationHighlightMirror === "true") return;
+    content.dataset.narrationHighlightMirror = "true";
+
+    var fallback = element("div", "bg-yellow-300", "");
+    fallback.id = "adt-narration-highlight-fallback";
+    fallback.hidden = true;
+    fallback.setAttribute("aria-hidden", "true");
+    fallback.style.position = "fixed";
+    fallback.style.left = "50%";
+    fallback.style.bottom = "5.5rem";
+    fallback.style.transform = "translateX(-50%)";
+    fallback.style.zIndex = "80";
+    fallback.style.maxWidth = "min(92vw, 44rem)";
+    fallback.style.padding = "0.35rem 0.8rem";
+    fallback.style.borderRadius = "0.5rem";
+    fallback.style.boxShadow = "0 0.15rem 0.5rem rgba(15, 23, 42, 0.28)";
+    fallback.style.color = "#111827";
+    fallback.style.fontSize = "1.2rem";
+    fallback.style.fontWeight = "700";
+    fallback.style.lineHeight = "1.35";
+    fallback.style.pointerEvents = "none";
+    document.body.appendChild(fallback);
+
+    var mirroredWord = null;
+    var animationFrame = 0;
+
+    function normaliseWord(value) {
+      return String(value || "")
+        .toLocaleLowerCase("sw-TZ")
+        .replace(/[^a-z0-9À-ž']/gi, "");
+    }
+
+    function clearMirror() {
+      if (mirroredWord) mirroredWord.classList.remove("bg-yellow-300");
+      mirroredWord = null;
+      fallback.hidden = true;
+      fallback.textContent = "";
+    }
+
+    function highlightTargetFor(source) {
+      var stableId = source.getAttribute("data-id");
+      if (!stableId) return null;
+      return content.querySelector('[data-highlight-for="' + stableId + '"]');
+    }
+
+    function prepareTargetWords(target) {
+      var existing = Array.prototype.slice.call(
+        target.querySelectorAll("[data-highlight-mirror-word]")
+      );
+      if (existing.length) return existing;
+
+      var walker = document.createTreeWalker(
+        target,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode: function (node) {
+            var parent = node.parentElement;
+            if (!parent || !/\S/.test(node.nodeValue || "")) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            if (parent.closest(".sr-only") || parent.closest("script, style, noscript")) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          },
+        }
+      );
+      var textNodes = [];
+      var current = walker.nextNode();
+      while (current) {
+        textNodes.push(current);
+        current = walker.nextNode();
+      }
+
+      var wordIndex = 0;
+      textNodes.forEach(function (textNode) {
+        var fragment = document.createDocumentFragment();
+        String(textNode.nodeValue || "")
+          .split(/(\s+)/)
+          .forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) {
+              fragment.appendChild(document.createTextNode(part));
+              return;
+            }
+            var word = element("span", "", part);
+            word.setAttribute("data-highlight-mirror-word", String(wordIndex));
+            fragment.appendChild(word);
+            wordIndex += 1;
+          });
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      return Array.prototype.slice.call(
+        target.querySelectorAll("[data-highlight-mirror-word]")
+      );
+    }
+
+    function nearestMatchingIndex(targetWords, activeText, expectedIndex) {
+      var activeNormalised = normaliseWord(activeText);
+      if (!activeNormalised) return expectedIndex;
+      var candidates = [];
+      targetWords.forEach(function (word, index) {
+        if (normaliseWord(word.textContent) === activeNormalised) candidates.push(index);
+      });
+      if (!candidates.length) return expectedIndex;
+      return candidates.reduce(function (best, candidate) {
+        return Math.abs(candidate - expectedIndex) < Math.abs(best - expectedIndex)
+          ? candidate
+          : best;
+      }, candidates[0]);
+    }
+
+    function synchroniseHighlight() {
+      animationFrame = 0;
+      var activeWord = content.querySelector(
+        ".sr-only [data-word-index].bg-yellow-300"
+      );
+      if (!activeWord) {
+        clearMirror();
+        return;
+      }
+      var source = activeWord.closest(".sr-only[data-id]");
+      if (!source) {
+        clearMirror();
+        return;
+      }
+      var target = highlightTargetFor(source);
+      var targetWords = target ? prepareTargetWords(target) : [];
+      if (!targetWords.length) {
+        if (mirroredWord) mirroredWord.classList.remove("bg-yellow-300");
+        mirroredWord = null;
+        fallback.textContent = activeWord.textContent || "";
+        fallback.hidden = !fallback.textContent;
+        return;
+      }
+
+      fallback.hidden = true;
+      fallback.textContent = "";
+      var sourceWords = source.querySelectorAll("[data-word-index]");
+      var sourceIndex = Number.parseInt(
+        activeWord.getAttribute("data-word-index") || "0",
+        10
+      );
+      if (!Number.isFinite(sourceIndex)) sourceIndex = 0;
+      var expectedIndex = sourceWords.length > 1
+        ? Math.round(sourceIndex * (targetWords.length - 1) / (sourceWords.length - 1))
+        : 0;
+      var targetIndex = nearestMatchingIndex(
+        targetWords,
+        activeWord.textContent,
+        expectedIndex
+      );
+      var nextWord = targetWords[
+        Math.max(0, Math.min(targetWords.length - 1, targetIndex))
+      ];
+      if (mirroredWord && mirroredWord !== nextWord) {
+        mirroredWord.classList.remove("bg-yellow-300");
+      }
+      mirroredWord = nextWord;
+      mirroredWord.classList.add("bg-yellow-300");
+    }
+
+    function scheduleSynchronisation() {
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(synchroniseHighlight);
+    }
+
+    var observer = new MutationObserver(scheduleSynchronisation);
+    observer.observe(content, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    scheduleSynchronisation();
+  }
+
   function initialise() {
     var controls = Array.prototype.slice.call(
       document.querySelectorAll(
@@ -412,6 +591,7 @@
     );
     var canvases = controls.map(convertControl).filter(Boolean);
     canvases.forEach(initialiseCanvas);
+    initialiseNarrationHighlightMirroring();
     document.documentElement.dataset.writingPracticeReady = "true";
   }
 
