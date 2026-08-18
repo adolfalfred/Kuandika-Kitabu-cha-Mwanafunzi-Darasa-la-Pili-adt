@@ -196,6 +196,36 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* Some source copy models deliberately distribute letters or words across
+   several ruled rows. Preserve the reviewed rows and repeated tokens instead
+   of flattening them into one wrapping string. */
+#content .handwriting-guide.semantic-model-rows {
+  display: grid;
+  grid-auto-rows: var(--handwriting-row-height);
+  min-height: calc(
+    var(--handwriting-row-height) * var(--semantic-model-row-count, 2)
+  );
+  padding-inline: 1rem;
+  font-size: clamp(1.25rem, 4.8cqw, 2.32rem);
+  white-space: normal;
+}
+
+#content .semantic-model-row {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: var(--handwriting-row-height);
+  line-height: var(--handwriting-row-height);
+  white-space: nowrap;
+}
+
+#content .semantic-model-token {
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
 /* Some complete source passages and example sentences are printed directly
    on the four-line guides rather than as ordinary prose. The semantic text
    remains responsive and narratable while retaining the source ruling. */
