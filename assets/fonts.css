@@ -778,6 +778,7 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-chapter-header {
+  position: relative;
   width: min(100%, 39rem);
   margin: 0 auto 1.25rem;
 }
@@ -786,6 +787,23 @@ body:has(#nav-container [class~="bottom-18"]) main {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* The teacher-reviewed page 8 wording is longer than the text baked into the
+   supplied chapter raster. Preserve the original decorated banner and replace
+   only its blue-panel wording with selectable-scale Sassoon Primary copy. */
+.pg007-chapter-heading-correction {
+  position: absolute;
+  inset: 50% 7% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #12afe4 0%, #09a8df 72%, #079fd8 100%);
+  color: #fff;
+  font-size: clamp(0.72rem, 3vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
 }
 
 .source-transcription {
@@ -1085,11 +1103,30 @@ body:has(#nav-container [class~="bottom-18"]) main {
 }
 
 .source-callout {
+  position: relative;
   width: min(100%, 33rem);
   justify-self: center;
   border: 0;
   background: transparent;
   padding: 0.25rem;
+}
+
+/* Replace only the reviewed prompt inside the intact page 8 callout art. */
+.pg007-callout-word-correction {
+  position: absolute;
+  z-index: 1;
+  top: 48%;
+  right: 3.25%;
+  left: 43.5%;
+  display: flex;
+  min-height: 19%;
+  align-items: center;
+  background: #fff;
+  color: #ed2b91;
+  font-size: clamp(0.72rem, 2.55vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .source-callout img {
