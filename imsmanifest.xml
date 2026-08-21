@@ -129,7 +129,12 @@
       <file href="content/i18n/sw-TZ/audio/pg009_im004.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_im005.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_im006.mp3"/>
-      <file href="content/i18n/sw-TZ/audio/pg009_n0021.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg009_response_marker_001.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg009_response_marker_002.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg009_response_marker_003.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg009_response_marker_004.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg009_response_marker_005.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg009_response_marker_006.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_sec001-answer-1-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_sec001-answer-2-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg009_sec001-answer-3-keyboard-braille-label.mp3"/>
@@ -139,10 +144,11 @@
       <file href="content/i18n/sw-TZ/audio/pg010_im001.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_im002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_model101.mp3"/>
-      <file href="content/i18n/sw-TZ/audio/pg010_n0021.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_n1002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_n1002_part002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_n1002_part003.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg010_response_marker_001.mp3"/>
+      <file href="content/i18n/sw-TZ/audio/pg010_response_marker_002.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_sec001-answer-1-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_sec001-answer-2-keyboard-braille-label.mp3"/>
       <file href="content/i18n/sw-TZ/audio/pg010_sec002-answer-1-keyboard-braille-label.mp3"/>

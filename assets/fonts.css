@@ -1202,6 +1202,21 @@ body:has(#nav-container [class~="bottom-18"]) main {
   line-height: 1;
 }
 
+/* Source pages 3 and 4 identify the continued picture-naming items with
+   compact red number tiles. Keep those badges attached to their pictures. */
+.source-picture-number {
+  min-width: 2.25rem;
+  border-radius: 0.35rem;
+  background: linear-gradient(180deg, #ef334f 0%, #cf1235 100%);
+  box-shadow: 0 0.15rem 0.25rem rgb(127 29 29 / 30%);
+  color: #fff;
+  font-size: clamp(1.25rem, 3cqw, 1.65rem);
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.4rem 0.45rem;
+  text-align: center;
+}
+
 .source-table-model {
   min-width: 0;
   margin-bottom: 1rem;
