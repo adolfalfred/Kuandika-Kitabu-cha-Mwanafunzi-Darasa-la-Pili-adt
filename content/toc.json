@@ -28,18 +28,11 @@
     "level": 1
   },
   {
-    "section_id": "pg004_sec001",
-    "href": "pg004_sec001.html",
+    "section_id": "pg004005_sec001",
+    "href": "pg004005_sec001.html",
     "title": "Shukurani",
-    "chapter_id": "toc_pg004_sec001",
+    "chapter_id": "toc_pg004005_sec001",
     "level": 1
-  },
-  {
-    "section_id": "pg005_sec001",
-    "href": "pg005_sec001.html",
-    "title": "Shukurani (inaendelea)",
-    "chapter_id": "toc_pg005_sec001",
-    "level": 3
   },
   {
     "section_id": "pg006_sec001",
@@ -128,7 +121,7 @@
   {
     "section_id": "pg016_sec002",
     "href": "pg016_sec002.html",
-    "title": "Kuandika hadithi fupi kwa mwandiko wa chapa wenye vikonyo",
+    "title": "Kuandika hadithi fupi kwa mwandiko wa chapa wenye vikonyo/Mwandiko wa Brelli.",
     "chapter_id": "toc_pg016_sec002",
     "level": 2
   },
@@ -149,14 +142,14 @@
   {
     "section_id": "pg018_sec002",
     "href": "pg018_sec002.html",
-    "title": "Kuandika herufi kwa mwandiko wa kuunga",
+    "title": "Kuandika herufi kwa mwandiko wa kuunga/Mwandiko wa Brelli.",
     "chapter_id": "toc_pg018_sec002",
     "level": 2
   },
   {
     "section_id": "pg019_sec001",
     "href": "pg019_sec001.html",
-    "title": "Kuandika maneno kwa mwandiko wa kuunga",
+    "title": "Kuandika maneno kwa mwandiko wa kuunga/Mwandiko wa Brelli",
     "chapter_id": "toc_pg019_sec001",
     "level": 3
   },
@@ -177,28 +170,28 @@
   {
     "section_id": "pg022_sec001",
     "href": "pg022_sec001.html",
-    "title": "Kuandika sentensi kwa mwandiko wa kuunga",
+    "title": "Kuandika sentensi kwa mwandiko wa kuunga/Mwandiko wa Brelli",
     "chapter_id": "toc_pg022_sec001",
     "level": 2
   },
   {
     "section_id": "pg023_sec001",
     "href": "pg023_sec001.html",
-    "title": "Kuandika sentensi kutokana na picha kwa mwandiko wa kuunga",
+    "title": "Kuandika sentensi kutokana na picha kwa mwandiko wa kuunga/Mwandiko wa Brelli",
     "chapter_id": "toc_pg023_sec001",
     "level": 3
   },
   {
     "section_id": "pg024_sec001",
     "href": "pg024_sec001.html",
-    "title": "Kuandika sentensi kutokana na picha (inaendelea)",
+    "title": "Kuandika sentensi kutokana na picha kwa mwandiko wa kuunga/Mwandiko wa Brelli (inaendelea)",
     "chapter_id": "toc_pg024_sec001",
     "level": 3
   },
   {
     "section_id": "pg025_sec001",
     "href": "pg025_sec001.html",
-    "title": "Jeni na mama yake waandaa chakula",
+    "title": "Kuandika habari fupi kwa mwandiko wa kuunga/Mwandiko wa Brelli",
     "chapter_id": "toc_pg025_sec001",
     "level": 2
   },

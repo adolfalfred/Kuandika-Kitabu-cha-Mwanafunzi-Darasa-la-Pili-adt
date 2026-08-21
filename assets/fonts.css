@@ -250,12 +250,15 @@ body {
 /* Some complete source passages and example sentences are printed directly
    on the four-line guides rather than as ordinary prose. The semantic text
    remains responsive and narratable while retaining the source ruling. */
-#content .source-lined-passage {
+#content .source-lined-passage,
+#content .handwriting-guide.semantic-model.source-lined-passage {
   display: block;
   box-sizing: border-box;
   width: 100%;
   min-height: var(--handwriting-row-height);
   margin: 0.75rem 0 1rem;
+  letter-spacing: 0.015em;
+  word-spacing: -0.06em;
 }
 
 #content ol.handwriting-guide {
@@ -863,6 +866,13 @@ body:has(#nav-container [class~="bottom-18"]) main {
   #content > section[data-section-id^="pg"]:not([data-section-id="pg001_sec001"]) {
     min-height: 71.56rem;
   }
+
+  /* Source page 16 was split after Activity 4. Its second website section only
+     contains the next heading and exercise instruction, so it should not inherit
+     the full printed-page minimum height and create a large artificial gap. */
+  #content > section[data-section-id^="pg"][data-section-id="pg016_sec002"] {
+    min-height: auto;
+  }
 }
 
 /* Pages ii-vi use measured source coordinates rather than the generic text
@@ -895,6 +905,17 @@ body:has(#nav-container [class~="bottom-18"]) main {
 .preliminary-pg005 .preliminary-layout {
   width: 71.65%;
   margin-left: 15.45%;
+}
+
+.preliminary-pg004005 .preliminary-acknowledgements {
+  width: 71.65%;
+  margin-left: 12.91%;
+}
+
+.preliminary-pg004005 .preliminary-acknowledgements-continuation {
+  width: 71.65%;
+  margin-left: 15.45%;
+  padding-top: 2.5rem;
 }
 
 .preliminary-imprint {
