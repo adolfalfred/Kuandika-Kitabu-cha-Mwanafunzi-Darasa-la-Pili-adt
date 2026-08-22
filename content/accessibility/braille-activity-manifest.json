@@ -1366,7 +1366,7 @@
       "tactileResourceRequired": true,
       "visualDescriptionTargets": [],
       "nativeBrailleInputAvailable": true,
-      "nativeKeyboardBrailleRows": 1,
+      "nativeKeyboardBrailleRows": 6,
       "sixKeyPilotCandidate": false,
       "brailleCode": null,
       "translationTable": null,
