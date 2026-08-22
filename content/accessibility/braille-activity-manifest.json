@@ -8,10 +8,10 @@
   "sixKeyInputEnabled": false,
   "activationRule": "Usiwashe tafsiri ya vitufe sita kabla mtaalamu wa Breli wa Tanzania hajathibitisha msimbo na jedwali.",
   "summary": {
-    "activities": 114,
-    "onScreenHandwritingActivities": 114,
-    "nativeKeyboardOrBrailleAlternatives": 114,
-    "tactileResourceRequired": 67,
+    "activities": 115,
+    "onScreenHandwritingActivities": 115,
+    "nativeKeyboardOrBrailleAlternatives": 115,
+    "tactileResourceRequired": 68,
     "sixKeyPilotCandidates": 0
   },
   "activities": [
@@ -2521,6 +2521,47 @@
       "sourcePage": 29,
       "printedPage": 23,
       "responseIndex": 1,
+      "sourcePrompt": "Chunguza picha na mazungumzo, kisha andika alama za uandishi zilizotumika.",
+      "writingRows": 2,
+      "expectedResponses": 1,
+      "taskType": "punctuation",
+      "expectedResponseType": "handwritten-or-native-text",
+      "primaryInputMethod": "on-screen-handwriting",
+      "inputMethods": [
+        "touch",
+        "stylus",
+        "mouse",
+        "keyboard",
+        "braille-display"
+      ],
+      "tactileResourceRequired": true,
+      "visualDescriptionTargets": [
+        "pg029_im001"
+      ],
+      "nativeBrailleInputAvailable": true,
+      "nativeKeyboardBrailleRows": 1,
+      "sixKeyPilotCandidate": false,
+      "brailleCode": null,
+      "translationTable": null,
+      "reviewStatus": "pending-qualified-tanzanian-braille-educator-review",
+      "educatorReview": {
+        "approvedInclusiveInstruction": null,
+        "approvedBrailleCode": null,
+        "approvedTranslationTable": null,
+        "tactileResourceDecision": null,
+        "reviewer": null,
+        "reviewDate": null,
+        "notes": null
+      }
+    },
+    {
+      "activityId": "pg029_sec001-answer-2",
+      "href": "pg029_sec001.html",
+      "sectionId": "pg029_sec001",
+      "sectionTitle": "Kuchunguza alama za uandishi katika picha",
+      "sourcePage": 29,
+      "printedPage": 23,
+      "responseIndex": 2,
       "sourcePrompt": "Chunguza picha na mazungumzo, kisha andika alama za uandishi zilizotumika.",
       "writingRows": 2,
       "expectedResponses": 1,
