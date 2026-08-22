@@ -375,8 +375,22 @@
     alternativeWrap.setAttribute("aria-labelledby", alternativeLabelId);
     alternativeWrap.appendChild(alternativeLabel);
 
-    var alternative = element("input", "drawing-alternative-input");
-    alternative.type = "search";
+    var alternativeRows = Number.parseInt(
+      control.getAttribute("data-alternative-rows"),
+      10
+    );
+    var isMultilineAlternative =
+      Number.isFinite(alternativeRows) && alternativeRows > 1;
+    var alternative = element(
+      isMultilineAlternative ? "textarea" : "input",
+      "drawing-alternative-input"
+    );
+    if (isMultilineAlternative) {
+      alternative.rows = alternativeRows;
+      alternative.setAttribute("data-multiline-alternative", "true");
+    } else {
+      alternative.type = "search";
+    }
     alternative.id = alternativeId;
     alternative.autocomplete = "off";
     alternative.inputMode = "text";

@@ -134,6 +134,12 @@
   appearance: textfield;
 }
 
+#content textarea.drawing-alternative-input {
+  min-height: 14rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
 .drawing-alternative-input:focus-visible {
   outline: 3px solid #1d4ed8;
   outline-offset: 3px;
