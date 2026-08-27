@@ -1452,35 +1452,6 @@ body:has(#nav-container [class~="bottom-18"]) main {
   white-space: pre-line;
 }
 
-.printed-page-number {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-  color: #0369a1;
-  font-weight: 700;
-  text-align: center;
-}
-
-.printed-page-number::before,
-.printed-page-number::after {
-  height: 0.22rem;
-  flex: 1 1 auto;
-  background: linear-gradient(90deg, transparent, #09a9dc 18%, #09a9dc);
-  content: "";
-}
-
-.printed-page-number::after {
-  background: linear-gradient(90deg, #09a9dc, #09a9dc 82%, transparent);
-}
-
-.printed-page-number > span {
-  background: #09a9dc;
-  border-radius: 999px;
-  color: #fff;
-  padding: 0.05rem 0.55rem 0.12rem;
-}
-
 .visible-book-toc {
   display: block;
   margin-top: 0;
@@ -1545,6 +1516,17 @@ body:has(#nav-container [class~="bottom-18"]) main {
 
 .book-toc-detail > .book-toc-leader {
   margin-bottom: 0.45rem;
+}
+
+@media (max-width: 767px) {
+  .book-toc-detail {
+    grid-template-columns: minmax(0, 1fr) minmax(1.5rem, 1fr) max-content;
+  }
+
+  .book-toc-detail > span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
 }
 
 .cover-figure,
